@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>客服</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">在线客服</div>
+		</div>
+		<div class="u-container">
+			<div class="u-online-wrapper">
+				<div class="u-online-left u-flex">
+					<img src="../img/s1.png" alt="" />
+					<div class="u-online-detail u-flex">
+						<span>您好，很高兴为您服务！</span>
+						<div class="u-triangle u-transform"></div>
+					</div>
+				</div>
+				<div class="u-online-left u-online-right u-flex">
+					<div class="u-online-detail u-flex">
+						<span>怎么实名认证呢？</span>
+						<div class="u-triangle2 u-transform"></div>
+					</div>
+					<img src="../img/s2.png" alt="" />
+				</div>
+			</div>
+			<div class="u-online-talk">
+				<div class="u-talk-top u-flex">
+					<div class="u-talk-left u-flex"><input type="text" /></div>
+					<span class="u-bgcolor u-flex u-center u-online-send">发送</span>
+					<img src="../img/put.png" alt="" class="u-send-img" />
+				</div>
+				<div class="u-talk-bottom u-flex" style="display:none;">
+					<div class="u-talk-photo u-flex u-center u-talk-photone">
+						<img src="../img/ph.png" alt="" />
+						<span>照片</span>
+					</div>
+					<input type="file" name="file" class="element u-flex" accept="image/*" />
+					<div class="u-talk-photo u-flex u-center u-talk-phototwo">
+						<img src="../img/carem.png" alt="" />
+						<span>拍照</span>
+					</div>
+					<input type="file" name="file" class="u-flex" accept="image/*" capture="camera" />
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			function goback(){
+				window.history.back();
+			};
+			//发送
+			$('.u-online-talk .u-online-send').click(function(){
+				setTimeout('myrefresh()',1000);
+			});
+			function myrefresh() 
+			{ 
+				window.location.reload(); 
+			} ;
+			
+			//上传图片
+			$('.u-talk-photone').click(function(){
+				$(this).next('input').click();
+			});
+			
+			//拍照
+			$('.u-talk-phototwo').click(function(){
+				$(this).next('input').click();
+			});
+			
+			$('.u-talk-top .u-send-img').click(function(){
+				$('.u-talk-bottom').show();
+			});
+		</script>
+	</body>
+</html>

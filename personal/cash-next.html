@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>提现-下一步</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">提现</div>
+		</div>
+		<div class="u-container">
+			<div class="u-invoice-apply">
+				<div class="u-apply-money u-flex">
+					<span>账户余额：<i>￥120</i></span>
+					<div class="u-apply-input u-flex">
+						<input type="number" placeholder="提现金额 （元）" />
+					</div>
+				</div>
+			</div>
+			<div class="u-invoice-input">
+				<div class="u-personal-info">
+					<h2>收款信息</h2>
+					<ul>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>开户行</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>银行卡号</span></div>
+							<div class="u-personal-right u-flex"><input type="number" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>账户名称</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p style="color:#fe9714;font-size:.3rem;margin-top:.3rem;padding:0 .2rem;">* 请仔细填写各项信息，否则将影响您的款项提现。</p>
+			<div class="u-apply-agree" style="padding-top:.3rem;">
+				<div class="u-apply-select u-apply-dissent"></div>
+				<p>记录填写信息，下次免填写</p>
+			</div>
+			<div class="u-apply-btn u-flex u-center">
+				<button class="u-btn u-bgcolor u-flex u-center">提交</button>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			function goback(){
+				window.history.back()
+			}; 
+		</script>
+	</body>
+</html>

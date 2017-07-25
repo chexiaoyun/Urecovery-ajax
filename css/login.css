@@ -1,0 +1,1303 @@
+/*登录*/
+.u-loginmode{
+	width:100%;
+	display: flex;
+	flex-direction:row;
+}
+.u-loginmode li{
+	flex:1;
+	text-align: center;
+}
+.u-loginmode li span{
+	font-size:.3rem;
+}
+.u-loginmode li.u-active span{
+	border-bottom: 3px solid #08D3B2;
+	padding-bottom:.1rem;
+}
+.u-code{
+	width:5.9rem;
+	display: flex;
+	flex-direction: row;
+}
+.u-code-left{
+	border:1px solid #E5E5E5;
+	display: flex;
+	flex:1;
+	height:.98rem;
+	background: #fff;
+}
+.u-code-left img{
+	width:2.02rem;
+	height:.92rem;
+}
+.u-code-right{
+	display: flex;
+	flex:0.8;
+	height:.98rem;
+}
+.u-code-right span{
+	color:#a7a7a7;
+	font-size:.24rem;
+}
+
+.u-choice{
+	flex-direction: row;
+}
+.u-common{
+	font-size:.3rem;
+	padding:0 .36rem;
+}
+.u-register{
+	border-right:2px solid #A7A7A7;
+}
+.u-forget{
+	color:#A7A7A7;
+}
+/*注册*/
+.u-link{
+	color:#A7A7A7;
+	font-size:0.3rem;
+	width: 100%;
+	text-align: center;
+	margin-top:.4rem;
+}
+form .u-apply-agree{
+	padding:.5rem 0;
+	width:5.3rem;
+}
+/*忘记密码*/
+.u-forgetwrap{
+	flex:row;
+	width:100%;
+	height:1rem;
+}
+.u-title{
+	display: flex;
+	flex:1;
+	font-size:.48rem;
+	color:#000;
+}
+
+/*我的积分*/
+.u-points-top{
+	/*width:100%;*/
+	padding:0 .2rem;
+	height:3.16rem;
+}
+.u-show-top {
+	flex-direction: row;
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.u-points-show{
+	background: #fff;
+	height:2.4rem;
+	margin-top:.5rem;
+	float:left;
+	border-radius: .1rem;
+	position: relative;
+	width:100%;
+}
+.u-points-show img{
+	float:left;
+	margin-top:-.26rem;
+	width:2.26rem;
+	height:1.64rem;
+}
+.u-points-num{
+	float:right;
+	padding-top:.34rem;
+	margin-left:30%;
+}
+.u-points-num span{
+	color:#ff3200;
+	font-size:.72rem;
+	float: left;
+	display: block;
+	width:100%;
+}
+.u-points-num span i{
+	color:#ff3200;
+	font-size:.36rem;
+}
+.u-points-num strong{
+	display: block;
+	float: left;
+	font-size:.3rem;
+	color:#666;
+}
+.u-points-show a{
+	color:#666;
+	font-size:.3rem;
+	float: left;
+	text-decoration: underline;
+	margin-left:.28rem;
+}
+.u-points-center.u-exchange-now{
+	margin:.3rem 0 .4rem;
+}
+.u-points-bottom .u-points-title{
+	color:#000;
+	font-size:.36rem;
+	padding-left:.2rem;
+	float:left;
+	display: block;
+	margin-bottom: .28rem;
+}
+.u-points-ul{
+	width:100%;
+}
+.u-points-ul li{
+	background: #fff;
+	width:100%;
+	height:1.2rem;
+	margin-bottom:.1rem;
+	flex-direction: column;
+}
+.u-points-item{
+	padding:.24rem .2rem 0;
+}
+.u-points-item span{
+	color:#08d3b2;
+	font-size:.3rem;
+	float: right;
+}
+.u-points-item span:first-child{
+	float:left;
+}
+.u-points-ul i{
+	color:#999;
+	font-size:.24rem;
+	padding:0 .2rem;
+	text-align: right;
+}
+.u-points-item.u-points-exchange span{
+	color:#FE9714;
+}
+/*积分兑换*/
+.u-exchange{
+	margin-top:.08rem;
+	width:100%;
+	height:3.48rem;
+}
+.u-exchange img{
+	height:3.48rem;
+	width:100%;
+}
+.u-exchange-term{
+	padding:.26rem .2rem 0 .2rem;
+	height:1.92rem;
+	background: #fff;
+	flex-direction: column;
+}
+.u-exchange-term span{
+	color:#000;
+	font-size:.36rem;
+}
+.u-exchange-term strong{
+	color:#ff9714;
+	font-size:.48rem;
+	margin-top:.46rem;
+}
+.u-exchange-term strong i{
+	color:#ff9714;
+	font-size:.3rem;
+}
+.u-summay{
+	margin-top:.1rem;
+	background: #fff;
+	padding:.36rem .2rem 0 .2rem;
+	height:3.92rem;
+}
+.u-summay span{
+	color:#000;
+	font-size:.36rem;
+	float:left;
+	width:100%;
+}
+.u-summay p{
+	color:#666;
+	font-size: .3rem;
+	line-height: .5rem;
+}
+.u-exchange-now{
+	width:100%;
+	margin-top:.75rem;
+}
+.u-exchange-wrap{
+	background: #FE9714;
+	color:#fff;
+}
+
+/*账户安全*/
+.u-account{
+	background: #fff;
+	padding:0 .2rem;
+	height:auto;
+	overflow: hidden;
+}
+.u-account li{
+	width:100%;
+	height:.88rem;
+	border-bottom:1px solid #e5e5e5;
+}
+.u-account li a{
+	width:100%;
+	height:.88rem;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.u-account-left{
+	color:#000;
+	font-size:.3rem;
+	flex:1;
+}
+.u-account-right{
+	flex:1;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.u-account-right span{
+	color:#999;
+	font-size:.3rem;
+	margin-right:.17rem;
+}
+.u-account-right img{
+	width:.21rem;
+	height:.36rem;
+}
+.u-account.u-guide-wrapper{
+	background: none;
+}
+.u-account li.u-guide{
+	height:auto;
+	overflow: hidden;
+}
+/*使用指南*/
+.u-guide-top{
+	height:.86rem;
+}
+.u-guide-left{
+	flex:1;
+}
+.u-guide-left span{
+	color:#000;
+	font-size:.3rem;
+	margin-left:.14rem;
+}
+.u-guide-right{
+	flex:.2;
+	height:.86rem;
+}
+.u-guide-right img{
+	width:.21rem;
+	height:.36rem;
+}
+.u-rotate{
+	transform: rotate(90deg);
+}
+.u-rotate-active{
+	transform: rotate(-90deg);
+}
+.u-guide-bottom{
+	color:#666;
+	font-size:.24rem;
+	padding-bottom:.36rem;
+	line-height: .4rem;
+}
+/*联系我们*/
+.u-contact{
+	flex-direction: row;
+	padding:.34rem 0;
+}
+.u-contact-left{
+	flex-direction: column;
+	flex:0.8;
+	align-items: flex-start;
+	justify-content: center;
+	padding-left:.68rem;
+}
+.u-contact-left span{
+	color:#000;
+	font-size:.36rem;
+	margin-bottom:.2rem;
+}
+.u-contact-left strong{
+	font-size:.3rem;
+}
+.u-contact-right{
+	width:1.93rem;
+	height:1.93rem;
+	border:1px solid #dcdcdc;
+}
+.u-contact-right img{
+	width:1.74rem;
+	height:1.74rem;
+}
+.u-contact-li{
+	align-items: center;
+}
+.u-contact-li span{
+	color:#000;
+	font-size:.3rem;
+	padding-left:.32rem;
+}
+.u-sign{
+	position: fixed;
+	bottom:.7rem;
+	left:0;
+	width:100%;
+}
+.u-sign a{
+	width:5.88rem;
+	height:.86rem;
+	border:2px solid #08D3B2;
+	border-radius: .5rem;
+	font-size:.36rem;
+}
+/*收货信息*/
+.u-account-right input{
+	text-align:right;
+	padding:0 .2rem;
+}
+.u-receiving li:last-child{
+	height:auto;
+}
+.u-receiving li:last-child span{
+	margin-top:.28rem;
+}
+.u-receiving li:last-child textarea{
+	width:100%;
+	font-size:.28rem;
+}
+.u-receiving-btn{
+	margin-top:.82rem;
+}
+
+/*我的发布*/
+.u-relase-nav{
+	padding:0 .85rem;
+	height:.8rem;
+	background: #fff;
+	flex-direction: row;
+}
+.u-relase-nav li{
+	font-size:.3rem;
+	color:#666;
+	flex:1;
+	height:.8rem;
+}
+.u-relase-active{
+	color:#08D3B2;
+	border-bottom:2px solid #08D3B2;
+}
+.u-relase-list{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.u-relase-list li{
+	width:100%;
+	height:1.72rem;
+	background: #fff;
+	margin-top:.2rem;
+}
+.u-relase-list li a{
+	padding:0 .27rem;
+	height:1.72rem;
+	width:100%;
+	justify-content: center;
+	align-items: center;
+}
+.u-relase-img{
+	width:1.3rem;
+	height:1.3rem;
+	margin-right:.2rem;
+}
+.u-relase-img img{
+	width:1.3rem;
+	height:1.3rem;
+}
+.u-relase-detail{
+	flex:1;
+	flex-direction: column;
+	height:1.3rem;
+}
+.u-relase-title span.u-bigtit{
+	color:#08D3B2;
+	font-size:.34rem;
+	float: left;
+}
+.u-relase-title span:last-child{
+	font-size:.24rem;
+	float:right;
+}
+.u-relase-title span.u-mintit{
+	color:#ff9714;
+}
+.u-relase-title span.u-finish{
+	color:#666;
+}
+.u-relase-left{
+	flex:1;
+}
+.u-relase-left span{
+	color:#666;
+	font-size:.24rem;
+	display: block;
+	margin-top:.1rem;
+}
+.u-relase-left span:first-child strong{
+	color:#08D3B2;
+	font-size:.2rem;
+}
+.u-relase-left span:last-child strong{
+	color:#ff3300;
+	font-size:.24rem;
+}
+.u-relase-bottom{
+	flex-direction: row;
+}
+.u-relase-right{
+	width:.21rem;
+	height:.36rem;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+.u-relase-right img{
+	width:.21rem;
+	height:.36rem;
+}
+
+/*回收需求进价-电池类*/
+.u-battery-top{
+	background: #fff;
+	padding:.37rem .2rem .25rem .2rem;
+}
+.u-battery-head{
+	flex-direction: row;
+}
+.u-battery-head span:first-child{
+	font-size:.3rem;
+	flex:0.5;
+}
+.u-battery-head span:last-child{
+	font-size:.24rem;
+	color:#999;
+	align-items: center;
+	justify-content: flex-end;
+	flex:1;
+}
+.u-battery-img{
+	margin-top:.3rem;
+	flex-direction: row;
+	width:100%;
+}
+.u-battery-img li{
+	width:1.26rem;
+	height:1.26rem;
+	margin-left:.2rem;
+	width:20%;
+}
+.u-battery-img li:first-child{
+	margin-left:0;
+}
+.u-battery-img li img{
+	width:100%;
+	height:1.26rem;
+}
+.u-battery-detail{
+	overflow: hidden;
+	padding-left:.2rem;
+}
+.u-battery-hide{
+	height:2.6rem;
+}
+.u-battery-show{
+	height:auto;
+}
+.u-battery-brand{
+	flex-direction: row;
+}
+.u-battery-detail span{
+	color:#666;
+	font-size:.3rem;
+	margin-top:.4rem;
+	display: block;
+}
+.u-battery-detail strong{
+	font-size:.3rem;
+}
+.u-battery-brand span:first-child{
+	flex:0.8;
+}
+.u-battery-detail span strong.u-black{
+	color:#000;
+	text-align: justify;
+}
+.u-brand-wrap{
+	flex-direction: row;
+	width:100%;
+}
+.u-brand-wrap span{
+	flex:0.3;
+}
+.u-brand-wrap strong{
+	flex:1;
+	margin-top:.4rem;
+}
+.u-battery-more{
+	flex-direction: row;
+	margin-top:.44rem;
+}
+.u-battery-more img{
+	width:.21rem;
+	height:.36rem;
+}
+.u-battery-more span{
+	margin-top:0;
+	margin-left:.15rem;
+	font-size:.3rem;
+	color:#666;
+}
+.u-battery-center{
+	margin-top:.1rem;
+	background: #fff;
+	padding:.28rem .2rem;
+	height:auto;
+	overflow: hidden;
+}
+.u-battery-center h1{
+	color:#000;
+	font-size: .3rem;
+	text-align: center;
+}
+.u-battery-ul{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.u-battery-ul li{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	flex-direction: row;
+	margin-top:.33rem;
+}
+.u-battery-ul li h5{
+	color:#000;
+	font-size:.3rem;
+	flex:1;
+	align-items: center;
+	justify-content: flex-start;
+}
+.u-price{
+	flex:1;
+	flex-direction: column;
+}
+.u-price span{
+	color:#FF3300;
+	font-size:.36rem;
+}
+.u-price span i{
+	font-size:.24rem;
+}
+.u-price strong{
+	color:#999;
+	font-size:.18rem;
+}
+.u-battery-btn{
+	width:1.6rem;
+	height:.8rem;
+	border-radius: .2rem;
+	color:#fff;
+	font-size:.36rem;
+}
+.u-battery-bottom{
+	margin-top:.1rem;
+	padding:.35rem .2rem;
+	background: #fff;
+	height:auto;
+	overflow: hidden;
+}
+.u-battery-bottom h1{
+	color:#000;
+	font-size:.3rem;
+}
+.u-battery-help{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.u-battery-help li{
+	border-bottom:1px solid #e5e5e5;
+	flex-direction: row;
+	width:100%;
+	height:1.53rem;
+	overflow: hidden;
+}
+.u-help-left{
+	flex:1;
+	align-items: center;
+	justify-content: flex-start;
+}
+.u-help-left img{
+	width:.7rem;
+	height:.7rem;
+	margin-right:.2rem;
+}
+.u-help-left span{
+	color:#000;
+	font-size:.3rem;
+}
+.u-help-right{
+	flex:1;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+}
+.u-help-right span{
+	color:#FF3300;
+	font-size:.24rem;
+}
+.u-help-right span i{
+	color:#999;
+	font-size:.18rem;
+}
+.u-help-right strong{
+	color:#ccc;
+	font-size:.24rem;
+	margin-top:.2rem;
+}
+
+/*回收需求进价-非电池*/
+.u-battery-current{
+	margin:.2rem 0 .35rem;
+	padding:0 .2rem;
+	height:auto;
+	overflow: hidden;
+}
+.u-current-wrapper{
+	border:1px solid #08D3B2;
+	border-radius: .2rem;
+	background: #e6fbf7;
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	padding:.36rem 0 .46rem 0;
+}
+.u-current-wrapper h1,.u-spend-wrapper h1{
+	color:#000;
+	font-size:.36rem;
+	text-align: center;
+}
+.u-current-time{
+	padding:0 .8rem;
+}
+.u-current-time span{
+	color:#666;
+	font-size:.3rem;
+	display: block;
+	margin-top:.35rem;
+}
+.u-current-wrapper p{
+	color:#ff9714;
+	font-size:.3rem;
+	padding:.45rem;
+}
+.u-current-trade{
+	width:100%;
+}
+.u-again{
+	background: #fff;
+	color:#ff9714;
+	font-size:.3rem;
+	border:1px solid #ff9714;
+	margin-top:.35rem;
+}
+.u-again input{
+	padding:0 .2rem;
+	height:100%;
+	text-align: center;
+}
+.u-again input::-webkit-input-placeholder{
+	color:#ff9714;
+}
+/*竞拍结果*/
+.u-current-info{
+	margin-top:.3rem;
+}
+.u-current-info img{
+	width:2.63rem;
+	height:1.91rem;
+}
+.u-current-info span{
+	color:#fe9714;
+	font-size:.34rem;
+	flex:0.8;
+}
+.u-current-final{
+	padding:0 .2rem;
+	flex-direction: column;
+	margin-top:.3rem;
+}
+.u-current-final span{
+	color:#666;
+	font-size:.3rem;
+}
+.u-current-final .u-current-show{
+	margin:.44rem 0;
+}
+.u-current-show li{
+	width: 1.2rem;
+	height: 1.3rem;
+	border-radius: .2rem;
+	background: -webkit-linear-gradient(#feb51a, #fe9914);
+    background: -o-linear-gradient(#feb51a, #fe9914);
+    background: -moz-linear-gradient(#feb51a, #fe9914);
+    background: linear-gradient(#feb51a, #fe9914);
+   	align-items: center;
+   	justify-content: center;
+   	margin-right:.2rem;
+   	flex-direction: column;
+}
+.u-current-final .u-current-show span{
+	color:#fff;
+   	font-size:.48rem;
+   	text-align: center;
+   	font-family: 'Arial';
+   	display: block;
+}
+.u-current-final .u-current-show li i{
+	display: block;
+	font-family: "microsoft yahei";
+	font-size:.36rem;
+	color:#fff;
+	text-align: center;
+}
+.u-current-vouch{
+	width:100%;
+	flex-direction: column;
+}
+.u-current-vouch span{
+	padding:0 .2rem;
+	color:#666;
+	font-size:.3rem;
+	margin-top:.72rem;
+	line-height: .5rem;
+}
+.u-current-vouch span i{
+	color:#08D3B2;
+}
+.u-current-input{
+	text-align: center;
+	flex-direction: column;
+	margin-top:.5rem;
+}
+.u-current-vouch  .u-current-input span{
+	margin-bottom:.15rem;
+	margin-top:0;
+}
+.u-current-input ul{
+	width:3.12rem;
+	height:.78rem;
+	border:1px solid #08D3B2;
+	flex-direction: row;
+}
+.u-current-input ul li{
+	width:25%;
+	height:.8rem;
+	border-left:1px solid #08D3B2;
+}
+.u-current-input ul li:first-child{
+	border-left:none;
+}
+.u-current-input ul li input{
+	width:100%;
+	height:.8rem;
+	float: left;
+	text-align: center;
+}
+.u-current-vouch p{
+	color:#999;
+}
+.u-current-wrapper p.u-current-over,.u-spend-wrapper p{
+	color:#666;
+	font-size:.3rem;
+}
+.u-current-over a{
+	text-decoration: underline;
+}
+.u-battery-success{
+	width:100%;
+	height:1.8rem;
+	margin-bottom:.1rem;
+}
+.u-battery-success img{
+	width:100%;
+	height:1.8rem;
+}
+/*我有异议*/
+.u-object-wrapper{
+	height:auto;
+	overflow: hidden;
+	padding:.38rem .2rem 0 .2rem;
+}
+.u-object-wrapper textarea{
+	width:91%;
+	height:2.66rem;
+	border:1px solid #dcdcdc;
+	padding:.34rem .28rem;
+}
+.u-object-btn{
+	width:100%;
+	margin-top:.42rem;
+}
+
+/*我的支出(对个人)*/
+.u-spend-current{
+	background: #fff;
+	margin-top:.1rem;
+	padding:0 .2rem;
+	height:auto;
+	overflow: hidden;
+}
+.u-spend-wrapper{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	padding:.36rem 0 .46rem 0;
+}
+.u-spend-finish{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.u-spend-finish img{
+	width:.8rem;
+	height:.8rem;
+	margin-right:.2rem;
+}
+.u-spend-finish span{
+	color:#08D3B2;
+	font-size:.48rem;
+	margin:.56rem 0;
+}
+.u-spend-obj{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	margin:.78rem 0 .62rem 0;
+}
+.u-spend-obj img{
+	width:.4rem;
+	height:.42rem;
+	margin-right:.1rem;
+}
+.u-spend-obj span{
+	font-size:.3rem;
+	color:#08D3B2;
+}
+/*我的账户*/
+.u-account-wrapper{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	background: #fff;
+}
+.u-account-balance{
+	background: url(../img/accbg.png) no-repeat;
+	padding:.5rem .4rem 0 .4rem;
+	height: 3.94rem;
+	background-size:7.5rem 3.94rem;
+	flex-direction: column;
+	overflow: hidden;
+}
+.u-account-my{
+	color:#fff;
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: row;
+}
+.u-account-my span{
+	font-size:.3rem;
+}
+.u-account-my strong{
+	font-size:.6rem;
+	justify-content: flex-end;
+	align-items: center;
+	flex:1;
+}
+.u-account-my strong i{
+	font-size:.3rem;
+}
+.u-account-my:first-child{
+	margin-bottom:.5rem;
+}
+.u-money-wrapper{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	flex-direction: row;
+	margin-bottom:.5rem;
+}
+.u-money-cash{
+	width:3.18rem;
+	height:.78rem;
+	border:1px solid #08D3B2;
+	border-radius: .5rem;
+	color:#08D3B2;
+	font-size:.36rem;
+	margin-right:.46rem;
+}
+.u-money-recharge{
+	width:3.2rem;
+	height:.80rem;
+	background: #08D3B2;
+	color:#fff;
+	font-size:.36rem;
+	border-radius: .5rem;
+}
+.u-account-record{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.u-account-record h1{
+	color:#000;
+	font-size:.36rem;
+	padding:.3rem .2rem;
+}
+.u-account-ul{
+	height:auto;
+	overflow: hidden;
+}
+.u-account-ul li{
+	margin-bottom:.1rem;
+	background: #fff;
+	padding:0 .2rem;
+}
+.u-account-top{
+	flex-direction: column;
+}
+.u-account-top span{
+	color:#999;
+	font-size:.24rem;
+	margin-top:.3rem;
+}
+.u-account-add,.u-account-record{
+	width:100%;
+	margin-top:.3rem;
+	flex-direction: row;
+}
+.u-account-add strong{
+	font-size:.3rem;
+}
+.u-bcolor{
+	color:#ff9714;
+}
+.u-account-add strong:last-child{
+	align-items: flex-end;
+	justify-content: flex-end;
+	flex:1;
+}
+.u-account-obj span:last-child{
+	align-items: flex-end;
+	justify-content: flex-end;
+	flex:1;
+}
+.u-account-bottom{
+	justify-content: flex-end;
+	width:100%;
+	padding:.28rem 0 .2rem 0;
+}
+.u-account-bottom a{
+	width:1.6rem;
+	height:.5rem;
+	border:1px solid #08D3B2;
+	font-size:.22rem;
+	border-radius: .5rem;
+	margin-left:.15rem;
+}
+.u-account-bottom a.u-already{
+	border-color:#999;
+	color:#999;
+}
+/*索要发票*/
+.u-bill{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	flex-direction: row;
+	padding:.3rem 0 .5rem 0;
+}
+.u-bill li{
+	flex:1;
+	align-items: center;
+	justify-content: center;
+}
+.u-bill li span{
+	color:#333;
+	font-size:.36rem;
+	padding:0 .2rem;
+}
+.u-bill li.u-active span{
+	color:#08D3B2;
+	border-bottom:3px solid #08D3B2;
+}
+.u-personal-name{
+	width:100%;
+	height:.9rem;
+	background: #fff;
+	flex-direction: row;
+	justify-content: center;
+}
+.u-personal-left{
+	flex:0.4;
+	color:#000;
+	font-size:.3rem;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left:.3rem;
+}
+.u-personal-right{
+	flex:1;
+}
+.u-personal-right input{
+	width:90%;
+	padding:0 .2rem;
+	text-align: right;
+}
+.u-personal-info{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.u-personal-info h2{
+	color:#000;
+	font-size:.3rem;
+	padding:.3rem;
+}
+.u-personal-info ul{
+	/*width:100%;*/
+	padding:0 .2rem;
+	background: #fff;
+	height:auto;
+	overflow: hidden;
+}
+.u-personal-info ul li{
+	width:100%;
+	border-top:1px solid #e5e5e5;
+}
+.u-personal-info ul li:first-child{
+	border:none;
+}
+.u-personal-info ul li .u-personal-left{
+	padding-left:.1rem;
+}
+.u-invoice-apply{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.u-apply-money{
+	flex-direction: column;
+	padding:.6rem .8rem 0 .8rem;
+	
+}
+.u-invoice-apply span{
+	color:#000;
+	font-size:.3rem;
+	margin-bottom:.27rem;
+}
+.u-invoice-apply span i{
+	color:#ff3500;
+	font-size:.36rem;
+}
+.u-apply-input{
+	width:100%;
+	height:.86rem;
+	border-radius: .5rem;
+	border:1px solid #e5e5e5;
+	background: #fff;
+}
+.u-apply-input input{
+	padding:0 .2rem;
+}
+.u-apply-btn{
+	width:100%;
+	margin:.55rem 0 .3rem 0;
+}
+/*争议投诉*/
+.u-complaint{
+	height:auto;
+	overflow: hidden;
+	padding:0 .2rem;
+}
+.u-complaint textarea{
+	width:94%;
+	height:2.2rem;
+	border:1px solid #e5e5e5;
+	border-radius: .1rem;
+	margin:.2rem 0 .3rem 0;
+	padding:.2rem;
+}
+/*参与估价*/
+.u-part-input{
+	margin-bottom:.38rem;
+}
+.u-current-wrapper p.u-part-over{
+	padding:.35rem  .3rem 0 .8rem;
+	font-size:.3rem;
+	flex-direction: row;
+}
+p.u-part-over span{
+	flex:0.9;
+}
+.u-part-over .u-part-a{
+	text-decoration: none;
+	padding:0 .1rem;
+	border-radius: .1rem;
+	font-size:.3rem;
+}
+
+/*在线客服*/
+.u-online-wrapper{
+	padding:0 .2rem;
+	height:auto;
+	overflow: hidden;
+	position:relative;
+}
+.u-online-left{
+	margin-top:.58rem;
+	justify-content: flex-start;
+}
+.u-online-left img{
+	width:.8rem;
+	height:.8rem;
+	margin-right:.34rem;
+}
+.u-online-left .u-online-detail{
+	background: #fff;
+	width:4.27rem;
+	height:auto;
+	position:relative;
+	border-radius: .1rem;
+	padding:.2rem;
+}
+.u-online-detail span{
+	color:#333;
+	font-size:.24rem;
+}
+.u-triangle{
+	position:absolute;
+	top:0;
+	left:-.1rem;
+	bottom:0;
+	margin:auto;
+	background: #fff;
+	width:.2rem;
+	height:.2rem;
+}
+.u-transform{
+	 -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+.u-online-left.u-online-right{
+	justify-content: flex-end;
+}
+.u-online-left.u-online-right img{
+	margin-left:.34rem;
+	margin-right:0;
+}
+.u-online-right .u-online-detail{
+	background: #08D3B2;
+}
+.u-online-right .u-online-detail .u-triangle2{
+	position:absolute;
+	top:0;
+	right:-.1rem;
+	bottom:0;
+	margin:auto;
+	background: #08D3B2;
+	width:.2rem;
+	height:.2rem;
+}
+.u-online-right .u-online-detail span{
+	color:#fff;
+}
+.u-online-talk{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	position:fixed;
+	bottom:0;
+	left:0;
+}
+.u-talk-top{
+	width:100%;
+	height:.94rem;
+	border:1px solid #c1c1c1;
+	border-right:0;
+	border-left:0;
+	flex-direction: row;
+	align-items: center;
+}
+.u-talk-wrapper{
+	padding:0 .2rem;
+}
+.u-talk-left{
+	border:1px solid #c1c1c1;
+	border-radius: .1rem;
+	width:5.5rem;
+	height:.6rem;
+	margin-left:.2rem;
+	background: #fff;
+}
+.u-talk-left input{
+	padding:.2rem;
+}
+.u-talk-top span{
+	color:#fff;
+	font-size:.2rem;
+	margin-left:.2rem;
+	border-radius: .1rem;
+	width:.65rem;
+	height:.5rem;
+}
+.u-talk-top img{
+	width:.57rem;
+	height:.57rem;
+	margin-left:.2rem;
+}
+.u-talk-bottom{
+	flex-direction: row;
+	width:100%;
+	height:1.67rem;
+}
+.u-talk-photo{
+	flex-direction: column;
+	margin-top:.2rem;
+	margin-left:.4rem;
+	position: relative;
+}
+.u-talk-photo img{
+	width:.85rem;
+	height:.85rem;
+}
+.u-talk-photo span{
+	color:#999;
+	font-size:.24rem;
+	margin-top:.1rem;
+}
+.u-talk-bottom input{
+	display: none;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>编辑资料</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">编辑资料</div>
+		</div>
+		<div class="u-container">
+			<ul class="u-edit-data">
+				<li class="u-flex u-center">
+					<div class="u-edit-left u-flex">
+						<span>头像</span>
+					</div>
+					<div class="u-edit-right u-flex">
+						<div class="u-edit-img u-flex" id="btn">
+							<img src="../img/head.png" alt="" />
+						</div>
+						<img src="../img/go.png" alt="" class="u-edit-go" />
+					</div>
+				</li>
+				<li class="u-flex u-center">
+					<div class="u-edit-left u-flex">
+						<span>性别</span>
+					</div>
+					<div class="u-edit-right u-flex">
+						<select class="u-flex" style="width:1rem;">
+							<option value="0" class="u-flex">男</option>
+							<option value="1" class="u-flex">女</option>
+						</select>
+						<img src="../img/go.png" alt="" class="u-edit-go" />
+					</div>
+				</li>
+				<li class="u-flex u-center">
+					<div class="u-edit-left u-flex">
+						<span>行业</span>
+					</div>
+					<a href="saved_resource.html" class="u-edit-right u-flex">
+						<!--<span>家具建材</span>-->
+						<input id="btn_IndustryID" type="button" value="家居建材" style="text-align: right;">
+						<img src="../img/go.png" alt="" class="u-edit-go" />
+					</a>
+				</li>
+				<li class="u-flex u-center">
+					<div class="u-edit-left u-flex">
+						<span>区域</span>
+					</div>
+					<div class="u-account-right u-flex">
+						<select id="selProvince" class="u-flex">
+							<option value="0" class="u-flex">省份</option>
+						</select>
+						<select id="selCity" class="u-flex">
+							<option value="0" class="u-flex">城</option>
+						</select>
+						<select id="selDistrict" class="u-flex">
+							<option value="0" class="u-flex">区/县</option>
+						</select>
+					</div>
+				</li>
+				<li class="u-flex u-center">
+					<div class="u-edit-left u-flex">
+						<span>详细地址</span>
+					</div>
+					<a href="address.html" class="u-edit-right u-flex">
+						<span>宜山路****大厦</span>
+						<img src="../img/go.png" alt="" class="u-edit-go" />
+					</a>
+				</li>
+				<li class="u-flex u-center">
+					<div class="u-edit-left u-flex">
+						<span>个性签名</span>
+					</div>
+					<a href="autograph.html" class="u-edit-right u-flex">
+						<span>越努力越幸运</span>
+						<img src="../img/go.png" alt="" class="u-edit-go" />
+					</a>
+				</li>
+			</ul>
+			<div class="u-apply-btn u-flex u-center">
+				<a href="certified.html" class="u-btn u-bgcolor u-flex u-center">保存</a>
+			</div>
+		</div>
+
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/china_area.js"></script>
+		<script src="../js/cslCamera.js"></script>
+		<script>
+			function goback() {
+				window.history.back();
+			};
+			//上传图片
+			var img = $(".img");
+			var callBack = function(album) {
+				//alert(album);
+				console.log(album);
+				console.log(img);
+				album.forEach(function(val, idx) {
+					var img = $("<img/>");
+					var div = $('.u-edit-img');
+					var imgone = $('.u-edit-img').find('img');
+					imgone.remove();
+					img.attr("src", val.data);
+					img.addClass('img');
+					div.append(img);
+				});
+			}
+			var carera = new $.Pgater($("#btn"), callBack);
+
+			//	三级联动
+			$(function() {
+				$.each(provinceJson, function(k, p) {
+					var option = "<option value='" + p.id + "'>" + p.province + "</option>";
+					$("#selProvince").append(option);
+				});
+				$("#selProvince").change(function() {
+					var selValue = $(this).val();
+					$("#selCity option:gt(0)").remove();
+					$.each(cityJson, function(k, p) {
+						// 直辖市处理.|| p.parent == selValue，直辖市为当前自己
+						if(p.id == selValue || p.parent == selValue) {
+							var option = "<option value='" + p.id + "'>" + p.city + "</option>";
+							$("#selCity").append(option);
+						}
+					});
+				});
+				$("#selCity").change(function() {
+					var selValue = $(this).val();
+					$("#selDistrict option:gt(0)").remove();
+					$.each(countyJson, function(k, p) {
+						if(p.parent == selValue) {
+							var option = "<option value='" + p.id + "'>" + p.county + "</option>";
+							$("#selDistrict").append(option);
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

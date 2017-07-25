@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>登录</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="u-close" onclick="goback()">
+			<img src="../img/close.png" alt="" />
+		</div>
+		<div class="u-welcom u-scolor">欢迎来到U智！</div>
+		<ul class="u-loginmode">
+			<li class="u-active"><span class="u-color">账号密码登录</span></li>
+			<li><span class="u-color">短信验证登录</span></li>
+		</ul>
+		<form action="" class="u-flex">
+			<div class="u-item phone u-flex">
+				<input type="number" placeholder="手机号码"  />
+			</div>
+			<div class="u-item passwd u-flex">
+				<input type="password" placeholder="输入密码" />
+			</div>
+			<div class="u-item secretword u-flex">
+				<input type="text" placeholder="验证码" />
+			</div>
+			<div class="u-code">
+				<div class="u-code-left u-center">
+					<img src="../img/code.png" alt="" />
+				</div>
+				<div class="u-code-right u-center">
+					<span>点击左侧图片，<br/>可更换验证码</span>
+				</div>
+			</div>
+			<a href="##" class="u-btn u-bgcolor u-distance u-flex u-center" onclick="login()" >登录</a>
+		</form>
+		<form action="" style="display:none;" class="u-flex message-login">
+			<div class="u-item phone u-flex">
+				<input type="number" placeholder="手机号码"  />
+			</div>
+			<div class="u-item code u-flex">
+				<input type="text" placeholder="验证码"  />
+				<span id="btnSendCode" class="u-scolor u-flex" onclick="obtain()">获取验证码</span>
+			</div>
+			<a href="../personal/not-certified.html" class="u-btn u-bgcolor u-distance u-flex u-center" >登录</a>
+		</form>
+		<div class="u-choice u-flex u-center">
+			<a href="register.html" class="u-register u-common u-scolor">注册U智</a>
+			<a href="forget.html" class="u-forget u-common u-flex">忘记密码</a>
+		</div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../api.js"></script>
+		<script>
+			function goback(){
+				window.history.back();	
+			};
+			
+			//获取验证码
+			function obtain(){
+				if($('.message-login .phone input').val()==""){
+					alert("请输入手机号");
+					return false;
+			    }else{
+			    	param = {phone:$('.phone input').val(),type:2};
+	 				jsonAjax(
+	 					"api/message/sendmessage",
+	 					param, 
+	 					"json",
+	 					function(data){
+							if( data.flag  = true ){
+								sendMessage();
+							}
+	 					}
+	 				);
+				}
+			};
+			
+			//登录
+			
+			function login(){
+				var phone = $('.phone input').val();
+				var password = $('.passwd input').val();
+//				var code = $('.secretword input').val();
+				if( phone == "" ){
+					alert("请输入手机号码！");
+					return false;
+				}
+				if( password == "" ){
+					alert("请输入密码！");
+					return false;
+				}
+//				if( code == "" ){
+//					alert("请输入验证码！");
+//					return false;
+//				}
+				param={phone:phone,password:password};
+				jsonAjax(
+					"api/login/index",
+					param,
+					"json",
+					function(data){
+						localStorage.token=data.data.token;
+						if(data.flag = true){
+							alert(data.msg);
+							window.location.href="../personal/not-certified.html"
+						}
+						
+					}
+				)
+			};
+			
+		</script>
+	</body>
+</html>

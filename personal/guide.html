@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>使用指南</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">使用指南</div>
+		</div>
+		<div class="u-container">
+			<ul class="u-account u-guide-wrapper">
+				<li class="u-guide">
+					<div class="u-guide-top u-flex u-center">
+						<div class="u-guide-left u-flex">
+							<img src="../img/reg.png" alt="" style="width:.41rem;height:.42rem;" />
+							<span>注册</span>
+						</div>
+						<div class="u-guide-right u-flex u-center">
+							<img src="../img/go.png" alt="" class="u-rotate" />
+						</div>
+					</div>
+					<p class="u-guide-bottom">
+						用户注册成功后，本平台将为您（以下称为“用户”）基于本服务使用的客观需要而在申请、注册本服务时，按照注册要求提供的帐号开通本服务，用户有权在本平台为其开通、并同意向其提供服务的基础上使用本服务。
+					</p>
+				</li>
+				<li class="u-guide">
+					<div class="u-guide-top u-flex u-center">
+						<div class="u-guide-left u-flex">
+							<img src="../img/lock.png" alt="" style="width:.4rem;height:.42rem;" />
+							<span>登录</span>
+						</div>
+						<div class="u-guide-right u-flex u-center">
+							<img src="../img/go.png" alt="" class="u-rotate" />
+						</div>
+					</div>
+					<p class="u-guide-bottom">
+						用户注册成功后，本平台将为您（以下称为“用户”）基于本服务使用的客观需要而在申请、注册本服务时，按照注册要求提供的帐号开通本服务，用户有权在本平台为其开通、并同意向其提供服务的基础上使用本服务。
+					</p>
+				</li>
+				<li class="u-guide">
+					<div class="u-guide-top u-flex u-center">
+						<div class="u-guide-left u-flex">
+							<img src="../img/release.png" alt="" style="width:.40rem;height:.36rem;" />
+							<span>发布</span>
+						</div>
+						<div class="u-guide-right u-flex u-center">
+							<img src="../img/go.png" alt="" class="u-rotate" />
+						</div>
+					</div>
+					<p class="u-guide-bottom">
+						用户注册成功后，本平台将为您（以下称为“用户”）基于本服务使用的客观需要而在申请、注册本服务时，按照注册要求提供的帐号开通本服务，用户有权在本平台为其开通、并同意向其提供服务的基础上使用本服务。
+					</p>
+				</li>
+				<li class="u-guide">
+					<div class="u-guide-top u-flex u-center">
+						<div class="u-guide-left u-flex">
+							<img src="../img/offer.png" alt="" style="width:.42rem;height:.42rem;" />
+							<span>报价</span>
+						</div>
+						<div class="u-guide-right u-flex u-center">
+							<img src="../img/go.png" alt="" class="u-rotate" />
+						</div>
+					</div>
+					<p class="u-guide-bottom">
+						用户注册成功后，本平台将为您（以下称为“用户”）基于本服务使用的客观需要而在申请、注册本服务时，按照注册要求提供的帐号开通本服务，用户有权在本平台为其开通、并同意向其提供服务的基础上使用本服务。
+					</p>
+				</li>
+			<ul/>
+		</div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			function goback(){
+				window.history.back()
+			};
+			$('.u-guide-bottom').hide();
+			$('.u-guide').click(function(){
+				console.log($(this).find('.u-guide-right img'));
+				$(this).find('.u-guide-bottom').slideToggle();
+				$(this).find('.u-guide-right img').toggleClass('u-rotate-active');
+				$(this).find('.u-guide-right img').toggleClass('u-rotate');
+			});
+		</script>
+	</body>
+</html>

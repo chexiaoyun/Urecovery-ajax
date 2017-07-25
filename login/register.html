@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>注册U智</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="u-close" onclick="goback()">
+			<img src="../img/close.png" alt="" />
+		</div>
+		<div class="u-welcom u-scolor u-grow">欢迎加入U智！</div>
+		<form action="" class="u-flex">
+			<div class="u-item phone u-flex">
+				<input type="number" placeholder="手机号码"  />
+			</div>
+			<div class="u-item code u-flex">
+				<input type="text" placeholder="验证码" />
+				<span id="btnSendCode" class="u-scolor u-flex" onclick="obtain()">获取验证码</span>
+			</div>
+			<div class="u-item passwd u-flex">
+				<input type="password" placeholder="输入密码" />
+			</div>
+			<div class="u-item apasswd u-flex">
+				<input type="password" placeholder="确认密码" />
+			</div>
+			<div class="u-apply-agree">
+				<div class="u-apply-select u-apply-dissent"></div>
+				<p>我已阅读并同意<a href="../personal/service-detail.html" class="u-scolor" style="border-bottom:1px solid #08D3B2;">U智平台服务条款</a></p>
+			</div>
+			<button class="u-btn u-bgcolor" type="button" onclick="register()">注册</button>
+		</form>
+		<div class="u-link">已有账号？<a href="login.html" class="u-scolor">立即登录</a></div>
+		
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../api.js"></script>
+		<script>
+			function goback(){
+				window.history.back();
+			};
+			
+			//获取验证码
+			function obtain(){
+				if($('.phone input').val()==""){
+					alert("请输入手机号");
+					return false;
+			    }else{
+			    	param = {phone:$('.phone input').val(),type:1};
+	 				jsonAjax(
+	 					"api/message/sendmessage",
+	 					param, 
+	 					"json",
+	 					function(data){
+							if( data.flag  = true ){
+								sendMessage();
+							}
+	 					}
+	 				);
+				}
+			};
+			
+			//注册
+			function register(){
+//				if($("#btnSendCode").attr("disabled")){
+//					alert("等待验证码");
+//					return false;
+//				}
+				var phone = $('.phone input').val();
+				var code = $('.code input').val();
+				var password = $('.passwd input').val();
+				var apasswd = $('.apasswd input').val();
+				if(phone!=""&&code!= ""&&password==apasswd&&password!=""&&apasswd!=""){
+					param={phone:phone,code:code,password:password,apasswd:apasswd},
+					jsonAjax(
+						"api/register/create",
+	   					param, 
+	   					"json",
+	   					function (data){
+	   						if( data.flag  = true ){
+								alert(data.msg);
+							}
+	   					}
+					)
+			    }else{
+			    	alert("用户名或密码错误！");
+			    	return false;
+			    }
+			};
+		</script>
+	</body>
+</html>

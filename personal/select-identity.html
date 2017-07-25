@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>选择身份</title>
+		<link rel="stylesheet" href="../css/common.css" />
+	</head>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">选择身份</div>
+		</div>
+		<div class="u-container u-flex u-center">
+			<span class="u-tip u-flex">* 完成认证有助于您享受U智的更多服务和功能！</span>
+			<div class="u-identity u-flex u-center">
+				<span class="u-personal u-flex u-current">我是个人</span>
+				<span class="u-personal u-flex">我是企业</span>
+				<div class="u-next u-center u-flex"><a href="##" class="u-btn u-flex u-center u-bgcolor">下一步</a></div>
+			</div>
+		</div>
+		
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			function goback(){
+				window.history.back();
+			};
+			//选择身份
+			$('.u-identity .u-personal').click(function(){
+				$(this).addClass('u-current').siblings().removeClass('u-current');
+			});
+			$('.u-next').click(function(){
+				if($('.u-identity span:first-child').is('.u-current')){
+					$(this).find('a').attr('href','personal-realname.html');
+				}else{
+					$(this).find('a').attr('href','company-realname.html');
+				}
+			})
+		</script>
+	</body>
+</html>

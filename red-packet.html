@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <title>我的红包</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<style>
+	.u-header-back{
+		flex:0.3;
+		justify-content: center;
+	}
+</style>
+<body>
+	<div id="u-header" class="u-flex u-bgcolor">
+		<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+		<div class="u-header-center u-flex u-center">
+			<span>我的红包</span>
+		</div>
+		<a href="packet-details.html" class="u-header-right u-flex u-center">
+			<span>红包明细</span>
+		</a>
+	</div>
+	<div class="u-container">
+		<div class="u-red-money u-flex u-center">
+			<span>950.5<i>元</i></span>
+		</div>
+		<div class="u-red-cash">
+			<div class="u-cash-wrapper">
+				<div class="u-red-top u-flex u-center">
+					<span>可提现金额</span>
+					<strong class="u-flex">900<i>元</i></strong>
+				</div>
+				<div class="u-red-way u-flex">
+					<div class="u-red-deposit u-flex u-center">提现</div>
+					<div class="u-red-deposit u-bgcolor u-flex u-center">转到余额</div>
+				</div>
+			</div>
+		</div>
+		<div class="u-red-reward">
+			<div class="u-cash-wrapper">
+				<div class="u-red-top u-flex u-center">
+					<span>交易完成奖励</span>
+					<strong class="u-flex">50.5<i>元</i></strong>
+				</div>
+				<div class="u-red-way u-flex">
+					<div class="u-red-deposit u-bycolor u-flex u-red-give u-center">拿去交易</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		function goback(){
+			window.history.back();
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <title>支付确认</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+	<div id="u-header" class="u-flex u-bgcolor">
+		<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+		<div class="u-header-center u-flex u-center">
+			<span>支付确认</span>
+		</div>
+	</div>
+	<div class="u-container">
+		<div class="u-payment">
+			<div class="u-payment-wrapper u-flex">
+				<span>支付单号：201706051235486</span>
+				<span>支付项目：保证金额度</span>
+				<span>收款方：xxxxxxxxxx</span>
+				<span>交易金额：<i>2000元</i></span>
+				<span>优惠金额：<i>-50元</i></span>
+				<div class="u-apply-way u-apply-money u-flex">
+					<span>付款方式</span>
+					<ul class="u-flex u-way-ul">
+						<li class="u-flex u-active">
+							<i></i><span>支付宝</span>
+						</li>
+						<li class="u-flex">
+							<i></i><span>微信</span>
+						</li>
+						<li class="u-flex">
+							<i></i><span>账户余额</span>
+						</li>
+					</ul>
+				</div>
+				<span>应付金额：<i style="font-size:.48rem;">1950元</i></span>
+			</div>
+		</div>
+		<div class="u-publish-btn u-flex u-center"><span class="u-btn u-bgcolor u-center u-flex">去支付</button></div>
+		
+	</div>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		function goback(){
+			window.history.back();
+		};
+		$('.u-way-ul li').click(function(){
+			$(this).addClass('u-active').siblings().removeClass('u-active');
+		});
+	</script>
+</body>
+</html>

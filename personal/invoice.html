@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>索要发票</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">索要发票</div>
+		</div>
+		<div class="u-container">
+			<ul class="u-bill u-flex u-center">
+				<li class="u-flex u-active"><span>个人</span></li>
+				<li class="u-flex"><span>单位</span></li>
+			</ul>
+			<div class="u-invoice-input">
+				<!--个人-->
+				<div class="u-personal-name u-flex">
+					<div class="u-personal-left u-flex"><span>名称</span></div>
+					<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+				</div>
+				<div class="u-personal-info">
+					<h2>收件信息</h2>
+					<ul>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>收件人</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>地址</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>联系电话</span></div>
+							<div class="u-personal-right u-flex"><input type="number" value="" /></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="u-invoice-input" style="display: none;">
+				<!--单位-->
+				<div class="u-personal-info">
+					<ul>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>公司名称</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>纳税人识别号</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>地址</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>电话</span></div>
+							<div class="u-personal-right u-flex"><input type="number" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>开户行</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>账号</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+					</ul>
+				</div>
+				<div class="u-personal-info">
+					<h2>收件信息</h2>
+					<ul>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>收件人</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>地址</span></div>
+							<div class="u-personal-right u-flex"><input type="text" value="" /></div>
+						</li>
+						<li class="u-personal-name u-flex">
+							<div class="u-personal-left u-flex"><span>联系电话</span></div>
+							<div class="u-personal-right u-flex"><input type="number" value="" /></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="u-invoice-apply">
+				<div class="u-apply-money u-flex">
+					<span>可申请开票金额：<i>￥120</i></span>
+					<div class="u-apply-input u-flex">
+						<input type="number" placeholder="申请金额 （元）" />
+					</div>
+				</div>
+				<div class="u-apply-agree">
+					<div class="u-apply-select u-apply-dissent"></div>
+					<p>同意使用顺丰快递寄送发票，同意支付快递费用18元，并委托U智收取和支付相关费</p>
+				</div>
+				<div class="u-apply-btn u-flex u-center">
+					<button class="u-btn u-bgcolor u-flex u-center">提交</button>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			function goback(){
+				window.history.back()
+			}; 
+			$('.u-bill li').click(function(){
+				$(this).addClass('u-active').siblings().removeClass('u-active');
+				$(this).parent('ul').siblings('.u-invoice-input').eq($(this).index()).show();
+				$(this).parent('ul').siblings('.u-invoice-input').eq($(this).index()).siblings('.u-invoice-input').hide();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <title>支付保证金</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+	<div id="u-header" class="u-flex u-bgcolor">
+		<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+		<div class="u-header-center u-flex u-center">
+			<span>支付保证金</span>
+		</div>
+	</div>
+	<div class="u-container">
+		<div class="u-bail-img"><img src="img/bail.png" alt="" /></div>
+		<div class="u-bail-add">
+			<h1>您可以通过以下两种方式来增加保证金额度：</h1>
+			<div class="u-bail-wayone">
+				<div class="u-wayone-wrapper u-flex">
+					<span class="u-flex u-bail-span u-center">方法一</span>
+					<p>您可以直接<i>充值保证金</i>，当您不需要报价的时候，您可以谁是免费退回保证金。</p>
+					<div class="u-publish-btn u-flex u-center"><a href="payment.html" class="u-btn u-bgcolor u-flex u-center">立即充值</a></div>
+				</div>
+			</div>
+			<div class="u-bail-wayone">
+				<div class="u-wayone-wrapper u-flex">
+					<span class="u-flex u-bail-span u-center">方法二</span>
+					<p>您可以购买<i>保证金保险</i>，增加您的保证金额度，避免占用您的资源。</p>
+					<div class="u-bail-enjoy u-flex">
+						<div class="u-bail-left u-flex">
+							<span>0元<i>29.9元</i></span>
+							<em>新用户专享</em>
+						</div>
+						<div class="u-bail-right u-center">
+							<span class="u-flex">1000<i class="u-flex">元</i><em class="u-flex">保证金额度/月</em></span>
+						</div>
+					</div>
+					<div class="u-publish-btn u-flex u-center"><a href="payment.html" class="u-btn u-bycolor u-flex u-center">立即购买</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="u-mask">
+		<div class="u-bail-mask">
+			<div class="u-bail-shell">
+				<p>保证金是为了维护平台用户公平竞争和交易的重要机制，防止恶意报价扰乱用户对平台服务的使用和感受。</p>
+				<p>您在任一竞拍活动中的报价够不能大于您当前的保证金额度。因此，当您需要超过您的保证金额度报价时，您需要增加您的保证金额度。</p>
+				<div class="u-publish-btn u-flex u-center"><span class="u-bgcolor u-bail-btn u-flex u-center">知道了</span></div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		function goback(){
+			window.history.back();
+		};
+		$('.u-publish-btn').click(function(){
+			$('.u-mask').hide();
+		});
+	</script>
+</body>
+</html>

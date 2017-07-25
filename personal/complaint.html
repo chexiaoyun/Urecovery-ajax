@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>争议投诉</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">争议投诉</div>
+		</div>
+		<div class="u-container">
+			<div class="u-complaint">
+				<textarea name="" rows="" cols="" placeholder="请输入您的反馈意见"></textarea>
+			</div>
+			<div class="u-clickload u-flex" id="btn">
+				<div class="u-click u-flex">
+					<img src="../img/load.png" alt="" />
+					<span>点击上传</span>
+				</div>
+			</div>
+			<div class="album"></div>
+			<div class="u-object-btn u-flex u-center">
+				<button class="u-btn u-bgcolor u-flex u-center">提交</button>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script type="text/javascript">
+//			var img=$('.img');
+//			var callBack=function(album){
+//				//alert(album);
+//				console.log(album);
+//				console.log(img);
+//				album.forEach(function(val,idx){
+//					var img=$("<img/>");
+//					var div=$("<div></div>");
+//					div.addClass('u-album-photo');
+//					img.addClass('img');
+//					var imgone=$('<img/>');
+//					imgone.addClass('imgone');
+//					imgone.attr('src','../img/remove.png');
+//					img.attr("src",val.data);
+//					div.append(img);
+//					div.append(imgone);
+//					$(".album").append(div);
+//					$('.album .u-album-photo .imgone').click(function(){
+//						$(this).parent().remove();
+//					});
+//				});
+//			}
+//			var carera=new $.Pgater($("#btn"),callBack);
+			
+			
+			function goback(){
+				window.history.back()
+			};
+		</script>
+	</body>
+</html>

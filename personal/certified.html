@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>已认证</title>
+		<link rel="stylesheet" href="../css/common.css" />
+	</head>
+	<body>
+		<div class="u-certified u-flex">
+			<div class="u-perback" onclick="goback()"><i></i></div>
+			<div class="u-perdata u-flex u-center">
+				<div class="u-head u-flex"><img src="../img/head.png" alt="" /></div>
+				<span>介绍一下你自己吧<i></i></span>
+				<strong class="u-flex u-center"><i></i>已认证</strong>
+			</div>
+		</div>
+		<ul class="u-info">
+			<li class="u-flex">
+				<span class="u-info-left u-flex">昵称</span>
+				<strong class="u-info-right u-flex">未设置呢称</strong>
+			</li>
+			<li class="u-flex">
+				<span class="u-info-left u-flex">性别</span>
+				<strong class="u-info-right u-flex">男</strong>
+			</li>
+			<li class="u-flex">
+				<span class="u-info-left u-flex">行业</span>
+				<strong class="u-info-right u-flex">家居建材</strong>
+			</li>
+			<li class="u-flex">
+				<span class="u-info-left u-flex">区域</span>
+				<strong class="u-info-right u-flex">上海市&nbsp;&nbsp;闵行区</strong>
+			</li>
+			<li class="u-flex">
+				<span class="u-info-left u-flex">详细地址</span>
+				<strong class="u-info-right u-flex">宜山路1000号****大厦</strong>
+			</li>
+		</ul>
+		<div class="u-flex u-peredit u-center"><a href="edit-data.html" class="u-btn u-flex u-bgcolor u-center">编辑资料</a></div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			function goback(){
+				window.history.back();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>选择行业</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.11.0.js"></script>
+	</head>
+	<style>
+		#drag{
+			padding:.5rem .8rem;
+			background: #fff;
+		}
+		#drag_h span{
+			float:right;
+		}
+		#IndustryList ul li.u-active{
+			color:#08D3B2;
+		}
+	</style>
+	<body>
+		<div id="drag">
+			<h3 id="drag_h">
+				<b>请选择行业</b>
+				<span onclick="boxAlpha()">关闭</span>
+			</h3>
+			<div id="drag_con">
+				<div id="IndustryAlpha">
+					<div id="IndustryList" class="radio">
+						<ul>
+							<li>餐饮业</li>
+							<li>广告</li>
+							<li>文字媒体/出版</li>
+							<li>机械/设备/重工</li>
+							<li>印刷/包装/造纸</li>
+							<li>采掘业/冶炼</li>
+							<li>娱乐/休闲/体育</li>
+							<li>法律</li>
+							<li>石油/化工/矿产/地质</li>
+							<li>环保</li>
+							<li>交通/运输/物流</li>
+							<li>批发/零售</li>
+							<li>教育/培训</li>
+							<li>学术/科研</li>
+							<li>房地产开发</li>
+							<li>生活服务</li>
+							<li>政府</li>
+							<li>农业/渔业/林业</li>
+							<li>其他行业</li>
+							<li>通信/电信/网络设备</li>
+							<li>互联网/电子商务</li>
+							<li>汽车及零配件</li>
+							<li>中介服务</li>
+							<li>仪器仪表/工业自动化</li>
+							<li>电力/水利</li>
+							<li>计算机硬件</li>
+							<li>计算机服务(系统、数据服务，维修)</li>
+							<li>通信/电信运营、增值服务</li>
+							<li>网络游戏</li>
+							<li>会计/审计</li>
+							<li>银行</li>
+							<li>保险</li>
+							<li>家具/家电/工艺品/玩具</li>
+							<li>办公用品及设备</li>
+							<li>医疗/护理/保健/卫生</li>
+							<li>医疗设备/器械</li>
+							<li>公关/市场推广/会展</li>
+							<li>影视/媒体/艺术</li>
+							<li>家居/室内设计/装潢</li>
+							<li>物业管理/商业中心</li>
+							<li>检测，认证</li>
+							<li>酒店/旅游</li>
+							<li>美容/保健</li>
+							<li>航天/航空</li>
+							<li>原材料和加工</li>
+							<li>非盈利机构</li>
+							<li>多元化业务集团公司</li>
+							<li>计算机软件</li>
+							<li>电子技术/半导体/集成电路</li>
+							<li>金融/投资/证券</li>
+							<li>贸易/进出口</li>
+							<li>快速消费品(食品,饮料,化妆品)</li>
+							<li>服装/纺织/皮革</li>
+							<li>制药/生物工程</li>
+							<li>建筑与工程</li>
+							<li>专业服务(咨询，人力资源)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+	<script>
+		function boxAlpha(){
+			window.history.back();
+		};
+		$('#IndustryList ul li').click(function(){
+			$(this).addClass('u-active').siblings('li').removeClass('u-active');
+		});
+	</script>
+</html>

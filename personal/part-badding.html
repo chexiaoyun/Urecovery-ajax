@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>参与竞价</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">参与竞价</div>
+		</div>
+		<div class="u-container">
+			<div class="u-battery-top">
+				<div class="u-battery-head u-flex">
+					<span class="u-scolor u-flex">铅酸蓄电池</span>
+					<span class="u-flex">需求编号：201706062233665689</span>
+				</div>
+				<ul class="u-battery-img u-flex">
+					<li><img src="../img/battery.png" alt="" /></li>
+					<li><img src="../img/battery.png" alt="" /></li>
+					<li><img src="../img/battery.png" alt="" /></li>
+					<li><img src="../img/battery.png" alt="" /></li>
+					<li><img src="../img/battery.png" alt="" /></li>
+				</ul>
+				<div class="u-battery-detail u-battery-hide">
+					<div class="u-battery-brand u-flex">
+						<span class="u-flex">品牌：<strong class="u-black">实达</strong></span>
+						<span>数量：<strong class="u-scolor">120</strong></span>
+					</div>
+					<span>回收价：<strong style="color:#FF3300;font-size:.36rem;">2元/公斤</strong></span>
+					<span>服务方式：<strong class="u-scolor">上门回收</strong></span>
+					<span>交易模式：<strong class="u-scolor">废品回收</strong></span>
+					<span>所在地：<strong class="u-black">上海市&nbsp;闵行区</strong></span>
+					<div class="u-brand-wrap u-flex">
+						<span class="u-flex">详细地址：</span>
+						<strong class="u-black u-flex">上海市闵行区宜山路188**号星火大厦2102室</strong>
+					</div>
+					<span>联系电话：<strong class="u-scolor">报价后方可查看手机号码</strong></span>
+					<div class="u-brand-wrap u-flex">
+						<span class="u-flex" style="flex:0.2;">留言：</span>
+						<strong class="u-black u-flex">融合了三大运营商的通信能力，通过将传统通信业务和能力与互联网相结合，创新融合阿里巴巴生态内容，全力为中小企业和开发者提供优质服务。</strong>
+					</div>
+				</div>
+				<div class="u-battery-more u-flex u-center">
+					<img src="../img/go.png" alt="" class="u-rotate" />
+					<span>查看更多</span>
+				</div>
+			</div>
+			<div class="u-battery-current">
+				<div class="u-current-wrapper">
+					<div class="u-current-time">
+						<span>剩余时间：<strong class="u-scolor" style="font-size:.3rem;">1天08小时50分26秒</strong></span>
+						<span>当前价格：<strong style="color:#FF3300;font-size:.36rem;">2元/公斤</strong></span>
+						<span>报价人：王**</span>
+					</div>
+					<div class="u-current-trade u-flex u-center">
+						<div class="u-btn u-flex u-again u-center"><input type="text" placeholder="请输入您的报价" /></div>
+					</div>
+					<p class="u-current-over">若你确定参与竞价，即视为您同意遵守<a href="##" class="u-scolor">竞价与交易规则</a></p>
+					<div class="u-current-trade u-flex u-center u-confirm">
+						<div class="u-btn u-bgcolor u-flex u-center">确认</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="u-mask" style="display: none;">
+			<div class="u-mask-wrapper u-flex">
+				<div class="u-reset u-flex u-center">
+					<img src="../img/tip.png" alt="" />
+					<span>您的保证金额度不够，请增加保证金后再报价。</span>
+				</div>
+				<div class="u-current-trade u-flex u-center">
+					<a href="../bail.html" class="u-btn u-bgcolor u-flex u-center">增加保证金</a>
+				</div>
+			</div>
+		</div>
+		<!--图片放大-->
+		<div class="u-photo-mask" style="display:none;">
+			<div class="u-photo-shell">
+				<img src="" alt="" />
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			function goback(){
+				window.history.back()
+			};
+			function show(){
+				$('.u-mask').show();
+			};
+			function cancel(){
+				$('.u-mask').hide();
+			}
+		</script>
+	</body>
+</html>

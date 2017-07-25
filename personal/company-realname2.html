@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>企业实名认证2</title>
+		<link rel="stylesheet" href="../css/common.css" />
+	</head>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">实名认证</div>
+		</div>
+		<div class="u-container u-flex">
+			<span class="u-tip u-flex">* 完成认证有助于您享受U智的更多服务和功能！</span>
+			<form action="" class="u-flex u-noform">
+				<div class="u-item phone u-flex">
+					<input type="text" placeholder="账户操作人姓名"  />
+				</div>
+				<div class="u-item card u-flex">
+					<input type="number" placeholder="身份证号码" />
+				</div>
+			</form>
+			<div class="u-photoId u-flex u-center">
+				<div class="u-photo-title">拍照上传身份证</div>
+				<div class="u-photo-upload">
+					<div class="u-upload u-positive u-flex u-center" id="btn">
+						<img src="../img/positive.png" alt="" class="imgone" />
+					</div>
+					<input type="file" id="fileElem" multiple accept="image/*" name="myImage" onchange="handleFiles()" style="display:none;">
+					<div class="u-upload u-side u-flex u-center" id="back">
+						<img src="../img/side.png" alt="" class="imgone" />
+					</div>
+					<input type="file" id="fileElemt" multiple accept="image/*" name="myImage" onchange="handle()" style="display:none;">
+				</div>
+			</div>
+			<button class="u-btn u-bgcolor" onclick='companyNext()'><a href="##">下一步</a></button>
+		</div>
+		
+		
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../api.js"></script>
+		<script type="text/javascript">
+			function goback(){
+				window.history.back();
+			};
+			var urlinfo=decodeURI(window.location.href); //获取当前页面的url 
+			len=urlinfo.length;//获取url的长度 
+			offset=urlinfo.indexOf("?");//设置参数字符串开始的位置 
+			newsidinfo=urlinfo.substr(offset+1,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串 
+			//将字符串转化为obj;
+			var res = {};
+			newsidinfo.split('&').forEach(function(i){
+		        var j = i.split('=');
+		        res[j[0]]=j[1];
+			});
+			console.log(res);
+			//上传图片
+			$('#btn').click(function(){
+				$(this).next('input').click();
+			});
+			$('#back').click(function(){
+				$(this).next('input').click();
+			});
+			var arr;
+			var side=[];
+			function handleFiles(){
+				var oMyForm = new FormData();
+        		oMyForm.append("image", $("#fileElem").get(0).files[0]);
+				$.ajax({
+		            url: apiurl+"/api/comm/upload",
+		            type: "POST",
+		            processData: false,
+		            contentType: false,
+		            data: oMyForm,
+		            success: function (data) {
+		            	arr=data.data;
+		            	console.log(arr);
+		                if (data.falg= true) {
+		                	$("#btn").empty();
+		                    $("#btn").html('<img src="'+ apiurl + data.data +'" class="img" />')
+		                }
+		            }
+		        });
+			};
+			function handle(){
+				var oMyForm = new FormData();
+        		oMyForm.append("image", $("#fileElemt").get(0).files[0]);
+				$.ajax({
+		            url: apiurl+"api/comm/upload",
+		            type: "POST",
+		            processData: false,
+		            contentType: false,
+		            data: oMyForm,
+		            success: function (data) {
+		            	side=data.data;
+		                if (data.falg= true) {
+		                	$('#back').empty();
+		                    $("#back").html('<img src="'+ apiurl + data.data + '" class="img" />')
+		                }
+		            }
+		        });
+			};
+			//
+			function companyNext(){
+				var truename = $('.phone input').val();
+				var card = $('.card input').val();
+				var before_card = arr;
+				console.log(before_card);
+				var after_card = side;
+				var permit = {truename:truename,card:card,before_card:before_card,after_card:after_card};
+				var paramt=Object.assign(res,permit);
+				console.log(permit);
+				if( truename == "" ){
+					alert("请输入真实姓名！");
+					return false;
+				}
+				if( card == "" || card.length != 18 ){
+					alert("请输入身份证号！");
+					return false;
+				}
+				if( $('.u-upload img').is('.imgone') ){
+					alert("请上传身份证正反面！");
+					return false;
+				}
+				else{
+					window.location.href="company-realname3.html?"+jQuery.param(paramt);
+				}
+			};
+		</script>
+	</body>
+</html>
