@@ -69,7 +69,7 @@
 		            success: function (data) {
 		            	imgarr.push(data.data);
 		            	//console.log(imgarr);
-		                if (data.falg= true) {
+		                if (data.falg) {
 							var div=$('<div></div>');
 							var imgone=$('<img class="imgone"src="" />');
 							imgone.attr('src','../img/remove.png');
@@ -94,7 +94,7 @@
 					param,
 					"json",
 					function(data){
-						if( data.flag = true ){
+						if( data.flag ){
 							window.location.href="company-credentials.html?"+jQuery.param(res);
 						}
 					}

@@ -6,6 +6,7 @@
 * @param callback回调函数  
 * @return  
 */
+//var apiurl="http://recycle.91poweron.com/";
 var apiurl="http://hs.dev/";
 function jsonAjax(url, param, data, callback) {
     return $.ajax({  
@@ -39,6 +40,11 @@ function SetRemainTime() {
 }
 //时间戳
 var timestamp = Math.round(new Date().getTime()/1000);
-var token; 
+var token = localStorage.token; 
 var sign = hex_md5("api_key=uzhi&token="+localStorage.token+"&timestamp="+timestamp);
 var allparam = {timestamp:timestamp,token:localStorage.token,sign:sign};
+//截取
+var urlinfo = decodeURI(window.location.href);  
+var len = urlinfo.length; 
+var offset = urlinfo.indexOf("?"); 
+var newsidinfo = urlinfo.substr(offset+1,len);

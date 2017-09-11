@@ -77,20 +77,23 @@ $(function(){
 	});
 	
 	//立即认证
-	$('.u-current-wrapper .u-confirm').click(function(){
-		$('.u-mask').show();
-	});
+//	$('.u-current-wrapper .u-confirm').click(function(){
+//		$('.u-mask').show();
+//	});
 	
 	//图片放大
 	$('.u-battery-img li').click(function(){
-		var imgsrc = $(this).find('img').attr('src');
-		$('.u-photo-mask').show();
-		$('.u-photo-shell img').attr('src',imgsrc);	
+		if($(this).find('img').attr("src") !== "" ){
+			var imgsrc = $(this).find('img').attr('src');
+			$('.u-photo-mask').show();
+			$('.u-photo-shell img').attr('src',imgsrc);	
+		}
 	});
 	$('.u-photo-mask').click(function(){
 		$(this).hide();
 	});
-	    
+	
+	
 });
 
 

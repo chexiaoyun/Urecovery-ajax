@@ -358,7 +358,7 @@ form.u-forgetform{
 .u-header-back{
 	flex:0.1;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: center;
 }
 .u-header-back i{
 	background: url(../img/back.png);
@@ -619,6 +619,7 @@ form.u-forgetform{
 	width:.92rem;
 	height:.92rem;
 	border-radius: 50%;
+	border:1px solid #A7A7A7;
 }
 .u-edit-img img{
 	width:.92rem;

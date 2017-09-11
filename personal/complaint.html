@@ -27,6 +27,7 @@
 					<span>点击上传</span>
 				</div>
 			</div>
+			<input type="file" id="fileElem" multiple accept="image/*" name="myImage" onchange="handleFiles()" style="display:none;">
 			<div class="album"></div>
 			<div class="u-object-btn u-flex u-center">
 				<button class="u-btn u-bgcolor u-flex u-center">提交</button>
@@ -34,30 +35,36 @@
 		</div>
 		<script src="../js/jquery-1.11.0.js"></script>
 		<script src="../js/common.js"></script>
+		<script src="../js/md5.js"></script>
+		<script src="../api.js"></script>
 		<script type="text/javascript">
-//			var img=$('.img');
-//			var callBack=function(album){
-//				//alert(album);
-//				console.log(album);
-//				console.log(img);
-//				album.forEach(function(val,idx){
-//					var img=$("<img/>");
-//					var div=$("<div></div>");
-//					div.addClass('u-album-photo');
-//					img.addClass('img');
-//					var imgone=$('<img/>');
-//					imgone.addClass('imgone');
-//					imgone.attr('src','../img/remove.png');
-//					img.attr("src",val.data);
-//					div.append(img);
-//					div.append(imgone);
-//					$(".album").append(div);
-//					$('.album .u-album-photo .imgone').click(function(){
-//						$(this).parent().remove();
-//					});
-//				});
-//			}
-//			var carera=new $.Pgater($("#btn"),callBack);
+			//上传图片
+			$('#btn').click(function(){
+				$(this).next('input').click();
+			});
+			var imgarr=[];
+			function handleFiles(){
+				var oMyForm = new FormData();
+        		oMyForm.append("image", $("#fileElem").get(0).files[0]);
+				$.ajax({
+		            url: apiurl+"/api/good/upload",
+		            type: "POST",
+		            processData: false,
+		            contentType: false,
+		            data: oMyForm,
+		            success: function (data) {
+		            	imgarr.push(data.data);
+						var div=$('<div></div>');
+						var imgone=$('<img class="imgone"src="" />');
+						imgone.attr('src','../img/remove.png');
+						var img=$('<img class="img" src="" />');
+						img.attr("src",apiurl+data.data);
+						$('.album').append(div);
+						div.append(imgone);
+						div.append(img);
+		            }
+		        });
+			};
 			
 			
 			function goback(){

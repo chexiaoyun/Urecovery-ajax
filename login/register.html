@@ -41,6 +41,7 @@
 		
 		<script src="../js/jquery-1.11.0.js"></script>
 		<script src="../js/common.js"></script>
+		<script src='../js/md5.js'></script>
 		<script src="../api.js"></script>
 		<script>
 			function goback(){
@@ -59,7 +60,7 @@
 	 					param, 
 	 					"json",
 	 					function(data){
-							if( data.flag  = true ){
+							if( data.flag ){
 								sendMessage();
 							}
 	 					}
@@ -84,7 +85,7 @@
 	   					param, 
 	   					"json",
 	   					function (data){
-	   						if( data.flag  = true ){
+	   						if( data.flag ){
 								alert(data.msg);
 							}
 	   					}

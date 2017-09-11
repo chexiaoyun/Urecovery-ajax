@@ -82,7 +82,7 @@
 		            data: oMyForm,
 		            success: function (data) {
 		            	imgall=data.data;
-		                if (data.falg= true) {
+		                if (data.falg) {
 		                	$("#btn").empty();
 		                    $("#btn").html('<img src="'+ apiurl + data.data +'" class="img" />')
 		                }
@@ -95,9 +95,12 @@
 				var company_name = $('.phone input').val();
 				var license = $('.card input').val();
 				var license_pic = imgall;
-				console.log(typeof(license_pic))
+				//console.log(typeof(license_pic))
 				pop = { company_name:company_name,license:license,license_pic:license_pic};
+				//var object = new Object();
 				var paramt=Object.assign(pop,allparam);
+				alert(paramt)
+				return ;
 				if( company_name == "" ){
 					alert("请输入企业名称！");
 					return false;

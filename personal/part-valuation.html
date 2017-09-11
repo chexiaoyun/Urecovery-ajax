@@ -20,33 +20,27 @@
 		<div class="u-container">
 			<div class="u-battery-top">
 				<div class="u-battery-head u-flex">
-					<span class="u-scolor u-flex">铅酸蓄电池</span>
+					<span class="u-scolor u-flex"></span>
 					<span class="u-flex">需求编号：201706062233665689</span>
 				</div>
-				<ul class="u-battery-img u-flex">
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-				</ul>
+				<ul class="u-battery-img u-flex"></ul>
 				<div class="u-battery-detail u-battery-hide">
 					<div class="u-battery-brand u-flex">
-						<span class="u-flex">品牌：<strong class="u-black">实达</strong></span>
-						<span>数量：<strong class="u-scolor">120</strong></span>
+						<span class="u-flex">品牌：<strong class="u-black"></strong></span>
+						<span>数量：<strong class="u-scolor"></strong></span>
 					</div>
-					<span>回收价：<strong style="color:#FF3300;font-size:.36rem;">2.1元/公斤</strong></span>
-					<span>服务方式：<strong class="u-scolor">上门回收</strong></span>
-					<span>交易模式：<strong class="u-scolor">废品回收</strong></span>
-					<span>所在地：<strong class="u-black">上海市&nbsp;闵行区</strong></span>
+					<span class="battery-price">回收价：<strong style="color:#FF3300;font-size:.36rem;"></strong></span>
+					<span class="battery-service">服务方式：<strong class="u-scolor"></strong></span>
+					<span class="battery-way">交易模式：<strong class="u-scolor"></strong></span>
+					<span class="battery-address">所在地：<strong class="u-black"></strong></span>
 					<div class="u-brand-wrap u-flex">
 						<span class="u-flex">详细地址：</span>
-						<strong class="u-black u-flex">上海市闵行区宜山路188**号星火大厦2102室</strong>
+						<strong class="u-black u-flex"></strong>
 					</div>
 					<span>联系电话：<strong class="u-scolor">报价后方可查看手机号码</strong></span>
 					<div class="u-brand-wrap u-flex">
 						<span class="u-flex" style="flex:0.2;">留言：</span>
-						<strong class="u-black u-flex">融合了三大运营商的通信能力，通过将传统通信业务和能力与互联网相结合，创新融合阿里巴巴生态内容，全力为中小企业和开发者提供优质服务。</strong>
+						<strong class="u-black u-flex"></strong>
 					</div>
 				</div>
 				<div class="u-battery-more u-flex u-center">
@@ -58,14 +52,17 @@
 				<div class="u-current-wrapper">
 					<div class="u-current-time">
 						<span>剩余时间：<strong class="u-scolor" style="font-size:.3rem;">1天08小时50分26秒</strong></span>
-						<span>当前价格：<strong style="color:#FF3300;font-size:.36rem;">2.1元/公斤</strong></span>
+						<span>当前价格：<strong style="color:#FF3300;font-size:.36rem;"></strong></span>
 						<span>报价人：王**</span>
 					</div>
-					<p class="u-current-over u-part-over u-flex"><span class="u-flex">*亲，您还未认证，立即认证可参与竞价喔！</span><a href="##" class="u-bgcolor u-part-a u-flex u-center">获取回收资质</a></p>
+					<p class="u-current-over u-part-over u-flex">
+						<span class="u-flex">*亲，您还未认证，立即认证可参与估价喔！</span>
+						<a href="javascript::void(0)" class="u-bgcolor u-part-a u-flex u-center">获取回收资质</a>
+					</p>
 					<div class="u-current-trade u-flex u-center u-part-input">
 						<div class="u-btn u-flex u-again u-center"><input type="text" placeholder="请输入您的估价" /></div>
 					</div>
-					<div class="u-current-trade u-flex u-center u-confirm">
+					<div class="u-current-trade u-flex u-center u-confirm" onclick="confirm()">
 						<div class="u-btn u-bgcolor u-flex u-center">确认</div>
 					</div>
 				</div>
@@ -104,15 +101,73 @@
 			}
 		</script>
 		<script>
-			param = {id:1};
-			jsonAjax(
-				"api/good/show",
-				param,
-				"json",
-				function(data){
-					//alert(1)
-				}
-			);
+			var html = "";
+			var urlinfo=decodeURI(window.location.href); //获取当前页面的url 
+			len=urlinfo.length;//获取url的长度 
+			offset=urlinfo.indexOf("?");//设置参数字符串开始的位置 
+			newsidinfo=urlinfo.substr(offset+10,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串 
+			//console.log(newsidinfo)
+			param = {goods_id:newsidinfo};
+			$.ajax({  
+		        type: "get",  
+		        url: apiurl+"api/good/show",  
+		        data: param,  
+		        dataType: "json",  
+		        success: function(data){
+					if( data.flag ){
+						var res = data.data.goods;
+						$('.u-battery-head span:first-child').html(res.name);
+						$('.u-battery-brand span:first-child strong').html(res.brand);
+						$('.u-battery-brand span:last-child strong').html(res.num);
+						$('.battery-price strong').html(res.price+'元/公斤');
+						if( res.service == 1 ){
+							$('.battery-service strong').html("上门服务")
+						}else if( res.service == 2 ){
+							$('.battery-service strong').html("物流快递")
+						}else if( res.service == 3 ){
+							$('.battery-service strong').html("协商交易点")
+						}
+						if( res.transaction == 1 ){
+							$('.battery-way strong').html("以旧换新")
+						}else if( res.service == 2 ){
+							$('.battery-service strong').html("废旧处理")
+						}
+						$('.battery-address strong').html(res.province_name+"&nbsp;"+res.city_name+"&nbsp;"+res.area_name);
+						$('.u-brand-wrap strong').html(res.address);
+						$('.u-brand-wrap.u-brand-note strong').html(res.note);
+						$('.u-current-time span:nth-child(2) strong').html(res.price+'元/公斤');
+						var photos = data.data.photos;
+						for( var i=0;i<photos.length;i++ ){
+							html+='<li><img src="'+ apiurl + photos[i].photo +'" alt="" /></li>';
+							$('.u-battery-img').html(html);
+						}
+					}
+		        },
+		        error: function () {  
+		        }  
+	       });
+			
+			//点击确认
+			function confirm (){
+//				if( $('.u-part-input input').val() == "" ){
+//					alert('请输入您的估价！');
+//				};
+				var dataPrice;
+				var price = { price:$('.u-part-input input').val(),goods_id:newsidinfo };
+				var param = Object.assign(price,allparam);
+				jsonAjax(
+					"api/quote/create",
+					param,
+					"json",
+					function(data){
+						if( data.flag ){
+							alert(data.msg);
+						}else{
+							alert(data.msg);
+						}
+					}
+				);
+			}
 		</script>
 	</body>
 </html>

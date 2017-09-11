@@ -73,7 +73,7 @@
 							</ul>
 						</div>
 						<p><i class="u-scolor">*</i>如不填写交易代码，您将无法收到对方的付款，因此，请在交易时务必向对方索取交易码。</p>
-						<div class="u-current-trade u-flex u-center">
+						<div class="u-current-trade u-flex u-center" onclick="order()">
 							<div class="u-btn u-bgcolor u-flex u-center">立即交易</div>
 						</div>
 					</div>
@@ -88,10 +88,15 @@
 		</div>
 		<script src="../js/jquery-1.11.0.js"></script>
 		<script src="../js/common.js"></script>
+		<script src="../js/md5.js"></script>
+		<script src="../api.js"></script>
 		<script>
 			function goback(){
 				window.history.back()
 			};
+			function order(){
+				window.location.href = 'nobattery-finish3.html'
+			}
 		</script>
 	</body>
 </html>

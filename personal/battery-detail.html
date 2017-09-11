@@ -20,33 +20,27 @@
 		<div class="u-container">
 			<div class="u-battery-top">
 				<div class="u-battery-head u-flex">
-					<span class="u-scolor u-flex">铅酸蓄电池</span>
+					<span class="u-scolor u-flex"></span>
 					<span class="u-flex">需求编号：201706062233665689</span>
 				</div>
-				<ul class="u-battery-img u-flex">
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-				</ul>
+				<ul class="u-battery-img u-flex"></ul>
 				<div class="u-battery-detail u-battery-hide">
 					<div class="u-battery-brand u-flex">
-						<span class="u-flex">品牌：<strong>实达</strong></span>
-						<span>数量：<strong class="u-scolor">120</strong></span>
+						<span class="u-flex">品牌：<strong></strong></span>
+						<span>数量：<strong class="u-scolor"></strong></span>
 					</div>
-					<span>回收价：<strong style="color:#FF3300;font-size:.36rem;">2元/公斤</strong></span>
-					<span>服务方式：<strong class="u-scolor">上门回收</strong></span>
-					<span>交易模式：<strong class="u-scolor">废品回收</strong></span>
-					<span>所在地：<strong class="u-black">上海市&nbsp;闵行区</strong></span>
+					<span class="battery-price">回收价：<strong style="color:#FF3300;font-size:.36rem;"></strong></span>
+					<span class="battery-service">服务方式：<strong class="u-scolor"></strong></span>
+					<span class="battery-way">交易模式：<strong class="u-scolor"></strong></span>
+					<span class="battery-address">所在地：<strong class="u-black"></strong></span>
 					<div class="u-brand-wrap u-flex">
 						<span class="u-flex">详细地址：</span>
-						<strong class="u-black u-flex">上海市闵行区宜山路188**号星火大厦2102室</strong>
+						<strong class="u-black u-flex"></strong>
 					</div>
 					<span>联系电话：<strong class="u-scolor">报价后方可查看手机号码</strong></span>
 					<div class="u-brand-wrap u-flex">
 						<span class="u-flex" style="flex:0.2;">留言：</span>
-						<strong class="u-black u-flex">融合了三大运营商的通信能力，通过将传统通信业务和能力与互联网相结合，创新融合阿里巴巴生态内容，全力为中小企业和开发者提供优质服务。</strong>
+						<strong class="u-black u-flex"></strong>
 					</div>
 				</div>
 				<div class="u-battery-more u-flex u-center">
@@ -56,56 +50,11 @@
 			</div>
 			<div class="u-battery-center">
 				<h1>估价结果</h1>
-				<ul class="u-battery-ul">
-					<li class="u-flex">
-						<h5 class="u-flex">U智出价</h5>
-						<div class="u-price u-flex">
-							<span>2.4<i>元/公斤</i></span>
-							<strong>（整体称重）</strong>
-						</div>
-						<div class="u-battery-btn u-bgcolor u-flex u-center">交投</div>
-					</li>
-					<li class="u-flex">
-						<h5 class="u-flex">上海电****公司</h5>
-						<div class="u-price u-flex">
-							<span>2.6<i>元/公斤</i></span>
-							<strong>（整体称重）</strong>
-						</div>
-						<div class="u-battery-btn u-bgcolor u-flex u-center">交投</div>
-					</li>
-					<li class="u-flex">
-						<h5 class="u-flex">杭州电****公司</h5>
-						<div class="u-price u-flex">
-							<span>2.3<i>元/公斤</i></span>
-							<strong>（整体称重）</strong>
-						</div>
-						<div class="u-battery-btn u-bgcolor u-flex u-center">交投</div>
-					</li>
-				</ul>
+				<ul class="u-battery-ul"></ul>
 			</div>
 			<div class="u-battery-bottom">
 				<h1>热心网友帮助估价</h1>
 				<ul class="u-battery-help">
-					<li class="u-flex">
-						<div class="u-help-left u-flex">
-							<img src="../img/author.png" alt="" />
-							<span>15912343696</span>
-						</div>
-						<div class="u-help-right u-flex">
-							<span>3.6元/公斤<i>（整体称重）</i></span>
-							<strong>2017-08-06</strong>
-						</div>
-					</li>
-					<li class="u-flex">
-						<div class="u-help-left u-flex">
-							<img src="../img/author.png" alt="" />
-							<span>15912343696</span>
-						</div>
-						<div class="u-help-right u-flex">
-							<span>3.6元/公斤<i>（整体称重）</i></span>
-							<strong>2017-08-06</strong>
-						</div>
-					</li>
 					<li class="u-flex">
 						<div class="u-help-left u-flex">
 							<img src="../img/author.png" alt="" />
@@ -127,11 +76,85 @@
 		</div>
 		<script src="../js/jquery-1.11.0.js"></script>
 		<script src="../js/common.js"></script>
-		<script src="../js/china_area.js"></script>
+		<script src="../js/md5.js"></script>
+		<script src="../api.js"></script>
 		<script>
 			function goback(){
 				window.history.back()
 			};
+			var html = "",list = "";
+			var urlinfo=decodeURI(window.location.href); //获取当前页面的url 
+			len=urlinfo.length;//获取url的长度 
+			offset=urlinfo.indexOf("?");//设置参数字符串开始的位置 
+			newsidinfo=urlinfo.substr(offset+10,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串 
+			var param = {goods_id:newsidinfo};
+			$.ajax({
+				type: "get",  
+		        url: apiurl+'api/member/show',  
+		        data: param,  
+		        dataType: "json",  
+		        success: function(data){
+		        	var res = data.data.goods;
+					var photo = data.data.photo;
+					var bid = data.data.bidding;
+		        	if( data.flag ){
+		        		$('.u-battery-head span:first-child').html(res.name);
+						$('.u-battery-brand span:first-child strong').html(res.brand);
+						$('.u-battery-brand span:last-child strong').html(res.num);
+						$('.battery-price strong').html(res.price+'元/公斤');
+						if( res.service == 1 ){
+							$('.battery-service strong').html("上门服务")
+						}else if( res.service == 2 ){
+							$('.battery-service strong').html("物流快递")
+						}else if( res.service == 3 ){
+							$('.battery-service strong').html("协商交易点")
+						}
+						if( res.transaction == 1 ){
+							$('.battery-way strong').html("以旧换新")
+						}else if( res.service == 2 ){
+							$('.battery-service strong').html("废旧处理")
+						}
+						$('.u-brand-wrap strong').html(res.address);
+						$('.u-brand-wrap.u-brand-note strong').html(res.note);
+						$('.u-current-time span:nth-child(2) strong').html(res.price+'元/公斤');
+						for( var i in photo ){
+							html+='<li><img src="'+ apiurl + photo[i].photo +'" alt="" /></li>';
+							$('.u-battery-img').html(html);
+						};
+						for( var i=0;i<bid.length;i++ ){
+							list+='<li class="u-flex u-center" id='+bid[i].bidding_id+' onclick="trade(this)"><h5 class="u-flex">'+bid[i].company_name+'</h5><div class="u-price u-flex"><span>'+bid[i].price+'<i>元/公斤</i></span><strong>（整体称重）</strong></div><div class="u-battery-btn u-bgcolor u-flex u-center u-trade" >交投</div></li>';
+							$('.u-battery-ul').html(list);
+						}
+		        	}else{
+		        		alert(data.msg);
+		        	}
+		        },
+		        error: function () { 
+		        	return;
+		        }  
+			});
+			
+			//交投
+			function trade(self){
+				id = self.id;
+				var param = {bidding_id:id};
+				var params = Object.assign(param,allparam);
+				$.ajax({
+					type:'post',
+					url:apiurl+'api/Goodsbidding/create',
+					data:params,
+					dataType:'json',
+					success:function(data){
+						if( data.flag ){
+							alert(data.msg);
+							window.location.href='nobattery-finish.html';
+						}else{
+							alert(data.msg);
+						}
+					},
+					error:function(){}
+				});
+			}
 		</script>
 	</body>
 </html>

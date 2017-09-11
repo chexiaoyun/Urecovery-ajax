@@ -58,7 +58,7 @@
 				param,
 				"json",
 				function(data){
-					if(data.flag = true){
+					if(data.flag ){
 						return true;
 					}else{
 						 window.location.href="../login/login.html"
@@ -72,6 +72,9 @@
 			$('#back').click(function(){
 				$(this).next('input').click();
 			});
+			
+			var arr;
+			var side=[];
 			function handleFiles(){
 				var oMyForm = new FormData();
 				var name = $("#fileElem").get(0).files[0].name;
@@ -83,8 +86,8 @@
 		            contentType: false,
 		            data: oMyForm,
 		            success: function (data) {
-		            	localStorage.imgsrc=data.data;
-		                if (data.falg= true) {
+		            	arr = data.data;
+		                if (data.falg) {
 		                	$("#btn").empty();
 		                    $("#btn").html('<img src="'+ apiurl + data.data +'" class="img" />')
 		                }
@@ -101,8 +104,8 @@
 		            contentType: false,
 		            data: oMyForm,
 		            success: function (data) {
-		            	localStorage.imgattr = data.data;
-		                if (data.falg= true) {
+		            	side = data.data;
+		                if (data.falg) {
 		                	$('#back').empty();
 		                    $("#back").html('<img src="'+ apiurl + data.data + '" class="img" />')
 		                }
@@ -113,8 +116,8 @@
 			function personalReal(){
 				var truename = $('.phone input').val();
 				var card = $('.card input').val();
-				var before_card = localStorage.imgsrc;
-				var after_card = localStorage.imgattr;
+				var before_card = arr;
+				var after_card = side;
 				if( truename == "" ){
 					alert("请输入真实姓名！");
 					return false;

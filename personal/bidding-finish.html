@@ -22,21 +22,22 @@
 		</div>
 		<div class="u-relase-navWrap">
 			<ul class="u-relase-nav u-flex u-center">
-				<li class="u-flex u-center u-relase-active"><a href="javascript:;">全部</a></li>
+				<li class="u-flex u-center"><a href="bidding.html">全部</a></li>
 				<li class="u-flex u-center"><a href="bidding-hand.html">进行中</a></li>
-				<li class="u-flex u-center"><a href="bidding-finish.html">已完成</a></li>
+				<li class="u-flex u-center u-relase-active"><a href="javascript:;">已完成</a></li>
 			</ul>
 		</div>
 		<div class="u-container" id="u-container" style="margin-top:1.8rem;">
 			<div id="main">
-				<ul class="u-relase-list" id="listWrapper"></ul>
+				<ul class="u-relase-list" id="listWrapper">
+				</ul>
 			</div>
 		</div>
 		<script src="../js/jquery-1.11.0.js"></script>
 		<script src="../js/common.js"></script>
 		<script src="../js/md5.js"></script>
-		<script src="../js/pull.min.js"></script>
 		<script src="../api.js"></script>
+		<script src="../js/pull.min.js"></script>
 		<script src="../js/release.js"></script>
 		<script>
 			function goback(){
@@ -45,7 +46,7 @@
 			//全部-get请求
 			var html = "";
 			var res;
-			var param = {page:0};
+			var param = {page:0,status:2};
 			var params = Object.assign(param,allparam);
 			$.ajax({
 				type: "get",  
@@ -56,12 +57,8 @@
 		        	res = data.data;
 		        	if( data.flag ){
 		        		for( var i in data.data ){
-			        		html+='<li id='+ res[i].bidding_id +' onclick="biddingUrl()"><a href="javascript:;" class="u-flex"><div class="u-relase-img"><img src='+apiurl+res[i].photo_315+' alt="" /></div><div class="u-relase-detail u-flex"><div class="u-relase-title"><span class="u-bigtit">'+res[i].name+'</span><span class="u-min" status='+ res[i].bidding_status +'></span></div><div class="u-relase-bottom u-flex"><div class="u-relase-left"><span>发布时间：'+res[i].created_at+'</strong></span><span>当前价格：'+res[i].price+'</strong></span></div><div class="u-relase-right u-flex"><img src="../img/go.png" alt="" /></div></div></div></a></li>'
+			        		html+='<li id='+ res[i].bidding_id +'><a href="javasrcipt:;" class="u-flex"><div class="u-relase-img"><img src='+apiurl+res[i].photo_315+' alt="" /></div><div class="u-relase-detail u-flex"><div class="u-relase-title"><span class="u-bigtit">'+res[i].name+'</span><span class="u-finish">已完成</span></div><div class="u-relase-bottom u-flex"><div class="u-relase-left"><span>发布时间：'+res[i].created_at+'</strong></span><span>当前价格：'+res[i].price+'</strong></span></div><div class="u-relase-right u-flex"><img src="../img/go.png" alt="" /></div></div></div></a></li>'
 			        		$(".u-relase-list").html(html);
-			        		if( res[i].bidding_status === 1 ){
-			        			$('.u-min').html('竞价中');
-			        			$('.u-min').addClass('u-mintit');
-			        		}
 			        	}
 		        	}else{
 		        		alert(data.msg);
@@ -72,7 +69,7 @@
 		        }  
 			});
 			function loading (){
-				var param = {page:page};
+				var param = {page:page,status:2};
 				var params = Object.assign(param,allparam);
 				$.ajax({
 					type: "get",  
@@ -82,8 +79,8 @@
 			        success: function(data){
 			        	var str = '';
 						if( data.flag ){
-							for( var i in data.data ){ 
-								str = '<li id='+ res[i].bidding_id +' onclick="biddingUrl()"><a href="javascript:;" class="u-flex"><div class="u-relase-img"><img src='+apiurl+res[i].photo_315+' alt="" /></div><div class="u-relase-detail u-flex"><div class="u-relase-title"><span class="u-bigtit">'+res[i].name+'</span><span class="u-min" status='+ res[i].bidding_status +'></span></div><div class="u-relase-bottom u-flex"><div class="u-relase-left"><span>发布时间：'+res[i].created_at+'</strong></span><span>当前价格：'+data.data[i].price+'</strong></span></div><div class="u-relase-right u-flex"><img src="../img/go.png" alt="" /></div></div></div></a></li>';
+							for( var i in data.data ){
+								str = '<li id='+ res[i].bidding_id +'><a href="javascript:;" class="u-flex"><div class="u-relase-img"><img src='+apiurl+res[i].photo_315+' alt="" /></div><div class="u-relase-detail u-flex"><div class="u-relase-title"><span class="u-bigtit">'+res[i].name+'</span><span class="u-finish">已完成</span></div><div class="u-relase-bottom u-flex"><div class="u-relase-left"><span>发布时间：'+res[i].created_at+'</strong></span><span>当前价格：'+data.data[i].price+'</strong></span></div><div class="u-relase-right u-flex"><img src="../img/go.png" alt="" /></div></div></div></a></li>';
 								$(".u-relase-list").append(str);
 							}
 						}else{
@@ -94,8 +91,7 @@
 			        	return;
 			        }  
 				});
-			};
-			
+			}
 		</script>
 	</body>
 </html>

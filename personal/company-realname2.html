@@ -80,9 +80,9 @@
 		            contentType: false,
 		            data: oMyForm,
 		            success: function (data) {
-		            	arr=data.data;
+		            	arr = data.data;
 		            	console.log(arr);
-		                if (data.falg= true) {
+		                if (data.falg) {
 		                	$("#btn").empty();
 		                    $("#btn").html('<img src="'+ apiurl + data.data +'" class="img" />')
 		                }
@@ -99,8 +99,8 @@
 		            contentType: false,
 		            data: oMyForm,
 		            success: function (data) {
-		            	side=data.data;
-		                if (data.falg= true) {
+		            	side = data.data;
+		                if (data.falg) {
 		                	$('#back').empty();
 		                    $("#back").html('<img src="'+ apiurl + data.data + '" class="img" />')
 		                }

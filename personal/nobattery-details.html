@@ -20,33 +20,27 @@
 		<div class="u-container">
 			<div class="u-battery-top">
 				<div class="u-battery-head u-flex">
-					<span class="u-scolor u-flex">逆变器</span>
+					<span class="u-scolor u-flex"></span>
 					<span class="u-flex">需求编号：201706062233665689</span>
 				</div>
-				<ul class="u-battery-img u-flex">
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-					<li><img src="../img/battery.png" alt="" /></li>
-				</ul>
+				<ul class="u-battery-img u-flex"></ul>
 				<div class="u-battery-detail u-battery-hide">
 					<div class="u-battery-brand u-flex">
-						<span class="u-flex">品牌：<strong>实达</strong></span>
-						<span>数量：<strong class="u-scolor">120</strong></span>
+						<span class="u-flex">品牌：<strong></strong></span>
+						<span>数量：<strong class="u-scolor"></strong></span>
 					</div>
-					<span>回收价：<strong style="color:#FF3300;font-size:.36rem;">2元/公斤</strong></span>
-					<span>服务方式：<strong class="u-scolor">上门回收</strong></span>
-					<span>交易模式：<strong class="u-scolor">废品回收</strong></span>
-					<span>所在地：<strong class="u-black">上海市&nbsp;闵行区</strong></span>
+					<span>回收价：<strong style="color:#FF3300;font-size:.36rem;"></strong></span>
+					<span>服务方式：<strong class="u-scolor"></strong></span>
+					<span>交易模式：<strong class="u-scolor"></strong></span>
+					<span>所在地：<strong class="u-black"></strong></span>
 					<div class="u-brand-wrap u-flex">
 						<span class="u-flex">详细地址：</span>
-						<strong class="u-black u-flex">上海市闵行区宜山路188**号星火大厦2102室</strong>
+						<strong class="u-black u-flex"></strong>
 					</div>
 					<span>联系电话：<strong class="u-scolor">报价后方可查看手机号码</strong></span>
 					<div class="u-brand-wrap u-flex">
 						<span class="u-flex" style="flex:0.2;">留言：</span>
-						<strong class="u-black u-flex">融合了三大运营商的通信能力，通过将传统通信业务和能力与互联网相结合，创新融合阿里巴巴生态内容，全力为中小企业和开发者提供优质服务。</strong>
+						<strong class="u-black u-flex"></strong>
 					</div>
 				</div>
 				<div class="u-battery-more u-flex u-center">
@@ -76,7 +70,7 @@
 					</div>
 					<div class="u-btn-choice u-flex">
 						<a href="##" class="u-btn-cancel u-flex u-center" onclick="cancel()">取消</a>
-						<a href="nobattery-finish.html" class="u-btn-ensurn u-flex u-center">确定</a>
+						<a href="" class="u-btn-ensurn u-flex u-center">确定</a>
 					</div>
 				</div>
 			</div>
@@ -89,6 +83,8 @@
 		</div>
 		<script src="../js/jquery-1.11.0.js"></script>
 		<script src="../js/common.js"></script>
+		<script src="../js/md5.js"></script>
+		<script src="../api.js"></script>
 		<script>
 			function goback(){
 				window.history.back()
@@ -98,7 +94,51 @@
 			};
 			function cancel(){
 				$('.u-mask').hide();
-			}
+			};
+			//获取数据
+			var urlinfo = decodeURI(window.location.href);  
+			len = urlinfo.length; 
+			offset = urlinfo.indexOf("?"); 
+			newsidinfo = urlinfo.substr(offset+1,len);
+			size = newsidinfo.length;
+			order = newsidinfo.indexOf("=");
+			id = newsidinfo.substr(order+1,size);
+			var param = {bidding_id:id};
+			var params = Object.assign(param,allparam);
+			$.ajax({
+				type:'get',
+				url:apiurl+'api/Member/QueteShow',
+				data:params,
+				dataType:'json',
+				success:function(data){
+					var res = data.data[0];
+		        	if( data.flag ){
+		        		$('.u-battery-head span:first-child').html(res.name);
+						$('.u-battery-brand span:first-child strong').html(res.brand);
+						$('.u-battery-brand span:last-child strong').html(res.num);
+						$('.battery-price strong').html(res.price+'元/公斤');
+						if( res.service == 1 ){
+							$('.battery-service strong').html("上门服务")
+						}else if( res.service == 2 ){
+							$('.battery-service strong').html("物流快递")
+						}else if( res.service == 3 ){
+							$('.battery-service strong').html("协商交易点")
+						}
+						if( res.transaction == 1 ){
+							$('.battery-way strong').html("以旧换新")
+						}else if( res.service == 2 ){
+							$('.battery-service strong').html("废旧处理")
+						}
+						$('.u-brand-wrap strong').html(res.address);
+						$('.u-brand-wrap.u-brand-note strong').html(res.note);
+		        	}else{
+		        		alert(data.msg);
+		        	}
+		        },
+		        error: function () { 
+		        	return;
+		        }  
+			});
 		</script>
 	</body>
 </html>

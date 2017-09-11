@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />    
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>关于我们</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<style>
+		.u-about-img{width:100%;height:auto;overflow: hidden;padding:.6rem 0 .37rem 0;}
+		.u-about-img img{width:2.4rem;height:2.4rem;}
+		.u-about-text{padding:0 .2rem;}
+		.u-about-text p{color:#000;font-size:.24rem;}
+		.u-about-copy{flex-direction: column;position:fixed;bottom:1.08rem;left:0;right:0;margin:auto;}
+		.u-about-copy span{font-size:.24rem;}
+	</style>
+	<body>
+		<div class="u-header u-bgcolor u-flex">
+			<div class="u-header-back u-flex" onclick="goback()"><i></i></div>
+			<div class="u-header-title u-flex">关于我们</div>
+		</div>
+		<div class="u-container">
+			<div class="u-about-img u-flex u-center"><img src="../img/u.png" alt="" /></div>
+			<div class="u-about-text">
+				<p>U智回收是由上海翰而精投资管理有限公司于2017年开发的APP应用程序，基于U智平台的UPS电源和蓄电池销售渠道为基础，通过APP 向数据机房、控制中心以、电动车相关客户以及再生资源回收商提供信息对接优质的服务。</p>
+				<p>U智回收相应国家绿色环保的倡议，致力于解决铅酸蓄电池安全环保回收和电源类产品的再生利用问题。为了实现“天更蓝、水更清 ”的目标贡献一份自己的力量。</p>
+			</div>
+			<div class="u-about-copy u-flex u-center">
+				<span class="u-scolor">Copyright 2006-2017 </span>
+				<span class="u-scolor">上海翰而精投资管理有限公司版权所有</span>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/md5.js"></script>
+		<script src="../api.js"></script>
+		<script>
+			function goback(){
+				window.history.back()
+			}
+		</script>
+	</body>
+</html>

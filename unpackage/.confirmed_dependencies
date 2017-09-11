@@ -1,0 +1,217 @@
+{
+	"index.html": {
+		"resources": [
+			"img/me.png",
+			"img/cout.png",
+			"img/custom.png",
+			"img/pub.png",
+			"img/packed.png",
+			"img/change.png",
+			"img/head.png",
+			"img/go.png",
+			"css/index.css",
+			"img/news.png",
+			"img/mark.png",
+			"js/common.js",
+			"img/refresh.png",
+			"img/publish.png",
+			"js/jquery-1.11.0.js",
+			"css/common.css",
+			"api.js",
+			"img/set.png",
+			"img/view.png",
+			"js/pull.min.js",
+			"img/map.png",
+			"img/deal.png",
+			"img/edit.png",
+			"js/index.js",
+			"js/md5.js",
+			"personal/part-valuation.html",
+			"publish-require.html",
+			"img/minmap.png",
+			"font/SourceHanSansCN-Regular.otf",
+			"personal/release.html",
+			"index-power.html",
+			"login/login.html",
+			"personal/account.html",
+			"personal/set.html"
+		],
+		"refer": [
+			"personal/part-valuation.html",
+			"publish-require.html",
+			"personal/release.html",
+			"index-power.html",
+			"login/login.html",
+			"personal/account.html",
+			"personal/set.html"
+		]
+	},
+	"personal/part-valuation.html": {
+		"resources": [
+			"img/battery.png",
+			"css/login.css",
+			"css/common.css",
+			"img/tip.png",
+			"index.html",
+			"img/back.png",
+			"personal/release.html",
+			"index-power.html",
+			"img/go.png",
+			"js/common.js",
+			"js/jquery-1.11.0.js",
+			"api.js",
+			"font/SourceHanSansCN-Regular.otf",
+			"js/md5.js"
+		],
+		"refer": [
+			"index.html",
+			"personal/release.html",
+			"index-power.html"
+		]
+	},
+	"publish-require.html": {
+		"resources": [
+			"img/load.png",
+			"img/packet.png",
+			"img/up.png",
+			"img/back.png",
+			"img/add.png",
+			"img/moren_03.png",
+			"img/bigon.png",
+			"img/reduce.png",
+			"img/down.png",
+			"index.html",
+			"img/xuanzhong_03.png",
+			"index-power.html"
+		],
+		"refer": [
+			"index.html",
+			"index-power.html"
+		]
+	},
+	"personal/release.html": {
+		"resources": [
+			"personal/part-valuation.html",
+			"index.html"
+		],
+		"refer": [
+			"personal/part-valuation.html",
+			"index.html"
+		]
+	},
+	"index-power.html": {
+		"resources": [
+			"img/me.png",
+			"img/pub.png",
+			"img/packed.png",
+			"img/head.png",
+			"img/news.png",
+			"css/index.css",
+			"img/mark.png",
+			"js/common.js",
+			"css/common.css",
+			"js/jquery-1.11.0.js",
+			"img/view.png",
+			"js/pull.min.js",
+			"img/edit.png",
+			"img/cout.png",
+			"img/custom.png",
+			"img/change.png",
+			"img/go.png",
+			"img/refresh.png",
+			"img/publish.png",
+			"img/set.png",
+			"api.js",
+			"font/SourceHanSansCN-Regular.otf",
+			"img/map.png",
+			"img/deal.png",
+			"js/md5.js",
+			"img/minmap.png",
+			"personal/part-valuation.html",
+			"publish-require.html",
+			"index.html"
+		],
+		"refer": [
+			"personal/part-valuation.html",
+			"publish-require.html",
+			"index.html"
+		]
+	},
+	"login/login.html": {
+		"resources": [
+			"css/login.css",
+			"img/close.png",
+			"img/code.png",
+			"personal/not-certified.html",
+			"index.html"
+		],
+		"refer": [
+			"personal/not-certified.html",
+			"index.html"
+		]
+	},
+	"personal/not-certified.html": {
+		"resources": [
+			"img/head.png",
+			"img/back.png",
+			"img/bgcolor.png",
+			"img/edit.png",
+			"img/vip.png",
+			"login/login.html"
+		],
+		"refer": [
+			"login/login.html"
+		]
+	},
+	"personal/account.html": {
+		"resources": [
+			"index.html",
+			"img/accbg.png"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"personal/account-security.html": {
+		"resources": [
+			"personal/select-identity.html"
+		],
+		"refer": [
+			"personal/select-identity.html"
+		]
+	},
+	"personal/set.html": {
+		"resources": [
+			"personal/account-security.html"
+		],
+		"refer": [
+			"personal/account-security.html"
+		]
+	},
+	"personal/select-identity.html": {
+		"resources": [
+			"personal/company-realname.html"
+		],
+		"refer": [
+			"personal/company-realname.html"
+		]
+	},
+	"personal/company-realname.html": {
+		"resources": [
+			"img/license.png",
+			"personal/company-realname.html",
+			"img/back.png",
+			"js/common.js",
+			"js/jquery-1.11.0.js",
+			"css/common.css",
+			"api.js",
+			"font/SourceHanSansCN-Regular.otf",
+			"js/md5.js",
+			"personal/select-identity.html"
+		],
+		"refer": [
+			"personal/company-realname.html",
+			"personal/select-identity.html"
+		]
+	}
+}

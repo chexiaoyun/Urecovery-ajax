@@ -38,17 +38,7 @@
 				<li>
 					<a href="##" class="u-flex">
 						<span class="u-account-left u-flex">所在地</span>
-						<div class="u-account-right u-flex">
-							<select id="selProvince" class="u-flex">
-							  <option value="0" class="u-flex">省份</option>
-							</select>
-							<select id="selCity" class="u-flex">
-							  <option value="0" class="u-flex">城</option>
-							</select>
-							<select id="selDistrict" class="u-flex">
-							  <option value="0" class="u-flex">区/县</option>
-							</select>
-						</div>
+						<div class="u-account-right u-flex" id="sanji"></div>
 					</a>
 				</li>
 				<li>
@@ -64,39 +54,13 @@
 		</div>
 		<script src="../js/jquery-1.11.0.js"></script>
 		<script src="../js/common.js"></script>
-		<script src="../js/china_area.js"></script>
+		<script src="../js/md5.js"></script>
+		<script src="../api.js"></script>
+		<script src="../js/locat.js"></script>
 		<script>
 			function goback(){
 				window.history.back()
 			};
-			//	三级联动
-			$(function() {
-			    $.each(provinceJson, function(k, p) {
-			        var option = "<option value='" + p.id + "'>" + p.province + "</option>";
-			        $("#selProvince").append(option);
-			    });
-			    $("#selProvince").change(function() {
-			        var selValue = $(this).val();
-			        $("#selCity option:gt(0)").remove();
-			        $.each(cityJson, function(k, p) {
-			            // 直辖市处理.|| p.parent == selValue，直辖市为当前自己
-			            if (p.id == selValue || p.parent == selValue) {
-			                var option = "<option value='" + p.id + "'>" + p.city + "</option>";
-			                $("#selCity").append(option);
-			            }
-			        });
-			    });
-			    $("#selCity").change(function() {
-			        var selValue = $(this).val();
-			        $("#selDistrict option:gt(0)").remove();
-			        $.each(countyJson, function(k, p) {
-			            if (p.parent == selValue) {
-			                var option = "<option value='" + p.id + "'>" + p.county + "</option>";
-			                $("#selDistrict").append(option);
-			            }
-			        });
-			    });
-			});
 		</script>
 	</body>
 </html>

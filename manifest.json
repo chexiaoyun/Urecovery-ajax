@@ -1,4 +1,4 @@
-﻿{
+{
     "@platforms": ["android", "iPhone", "iPad"],
     "id": "H5E28A80C",/*应用的标识，创建应用时自动生成，勿手动修改*/
     "name": "U回收",/*应用名称，程序桌面图标名称*/
@@ -199,5 +199,316 @@
                 }
             }
         }
-    }
+    },
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"img/me.png",
+					"img/cout.png",
+					"img/custom.png",
+					"img/pub.png",
+					"img/packed.png",
+					"img/change.png",
+					"img/head.png",
+					"img/go.png",
+					"css/index.css",
+					"img/news.png",
+					"img/mark.png",
+					"js/common.js",
+					"img/refresh.png",
+					"img/publish.png",
+					"js/jquery-1.11.0.js",
+					"css/common.css",
+					"api.js",
+					"img/set.png",
+					"img/view.png",
+					"js/pull.min.js",
+					"img/map.png",
+					"img/deal.png",
+					"img/edit.png",
+					"js/index.js",
+					"js/md5.js",
+					"personal/part-valuation.html",
+					"publish-require.html",
+					"img/minmap.png",
+					"font/SourceHanSansCN-Regular.otf",
+					"personal/release.html",
+					"index-power.html",
+					"login/login.html",
+					"personal/account.html",
+					"personal/set.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personal/part-valuation.html": {
+				"resources": [
+					"img/battery.png",
+					"css/login.css",
+					"css/common.css",
+					"img/tip.png",
+					"index.html",
+					"img/back.png",
+					"personal/release.html",
+					"index-power.html",
+					"img/go.png",
+					"js/common.js",
+					"js/jquery-1.11.0.js",
+					"api.js",
+					"font/SourceHanSansCN-Regular.otf",
+					"js/md5.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"publish-require.html": {
+				"resources": [
+					"img/load.png",
+					"img/packet.png",
+					"img/up.png",
+					"img/back.png",
+					"img/add.png",
+					"img/moren_03.png",
+					"img/bigon.png",
+					"img/reduce.png",
+					"img/down.png",
+					"index.html",
+					"img/xuanzhong_03.png",
+					"index-power.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personal/release.html": {
+				"resources": [
+					"personal/part-valuation.html",
+					"index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"index-power.html": {
+				"resources": [
+					"img/me.png",
+					"img/pub.png",
+					"img/packed.png",
+					"img/head.png",
+					"img/news.png",
+					"css/index.css",
+					"img/mark.png",
+					"js/common.js",
+					"css/common.css",
+					"js/jquery-1.11.0.js",
+					"img/view.png",
+					"js/pull.min.js",
+					"img/edit.png",
+					"img/cout.png",
+					"img/custom.png",
+					"img/change.png",
+					"img/go.png",
+					"img/refresh.png",
+					"img/publish.png",
+					"img/set.png",
+					"api.js",
+					"font/SourceHanSansCN-Regular.otf",
+					"img/map.png",
+					"img/deal.png",
+					"js/md5.js",
+					"img/minmap.png",
+					"personal/part-valuation.html",
+					"publish-require.html",
+					"index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login/login.html": {
+				"resources": [
+					"css/login.css",
+					"img/close.png",
+					"img/code.png",
+					"personal/not-certified.html",
+					"index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personal/not-certified.html": {
+				"resources": [
+					"img/head.png",
+					"img/back.png",
+					"img/bgcolor.png",
+					"img/edit.png",
+					"img/vip.png",
+					"login/login.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personal/account.html": {
+				"resources": [
+					"index.html",
+					"img/accbg.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personal/account-security.html": {
+				"resources": [
+					"personal/select-identity.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personal/set.html": {
+				"resources": [
+					"personal/account-security.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personal/select-identity.html": {
+				"resources": [
+					"personal/company-realname.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personal/company-realname.html": {
+				"resources": [
+					"img/license.png",
+					"personal/company-realname.html",
+					"img/back.png",
+					"js/common.js",
+					"js/jquery-1.11.0.js",
+					"css/common.css",
+					"api.js",
+					"font/SourceHanSansCN-Regular.otf",
+					"js/md5.js",
+					"personal/select-identity.html"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"personal/cash.html",
+				"img/sucess.png",
+				"bidding-success.html",
+				"personal/nobattery-march.html",
+				"login/forget.html",
+				"personal/commodity-rules.html",
+				"img/02.jpg",
+				"personal/modify-number2.html",
+				"img/finish.png",
+				"font/SourceHanSansCN-Normal.otf",
+				"font/SourceHanSansCN-Medium.otf",
+				"img/small-code.png",
+				"img/end.png",
+				"personal/invoice-rules.html",
+				"index-waster.html",
+				"personal/receiving.html",
+				"img/ph.png",
+				"personal/set-pawd2.html",
+				"img/bid.png",
+				"personal/nobattery-finish2.html",
+				"personal/nobattery-success.html",
+				"personal/nobattery-finish3.html",
+				"img/side.png",
+				"personal/company-realname3.html",
+				"img/obj.png",
+				"img/new.png",
+				"personal/invoice.html",
+				"personal/company-realname2.html",
+				"personal/service.html",
+				"img/exchange.png",
+				"personal/nobattery-fail.html",
+				"index-electron.html",
+				"personal/part-badding.html",
+				"bail.html",
+				"js/jquery.fullpage.min.js",
+				"start-trade.html",
+				"font/SourceHanSansCN-Light.otf",
+				"js/mui.min.js",
+				"personal/spend-personal.html",
+				"personal/autograph.html",
+				"img/lock.png",
+				"img/bail.png",
+				"personal/set-pawd.html",
+				"img/over.png",
+				"img/author.png",
+				"red-packet.html",
+				"font/SourceHanSansCN-Heavy.otf",
+				"news.html",
+				"img/04.jpg",
+				"personal/exchange.html",
+				"css/mui.min.css",
+				"img/reg.png",
+				"personal/guide.html",
+				"trade-finish.html",
+				"img/quote.png",
+				"img/03.jpg",
+				"personal/cash-next.html",
+				"personal/edit-data.html",
+				"payment.html",
+				"personal/certified.html",
+				"personal/complaint.html",
+				"energy.html",
+				"img/info.png",
+				"img/logo-code.png",
+				"personal/service-detail.html",
+				"img/say.png",
+				"personal/modify-number.html",
+				"personal/report-system.html",
+				"personal/talk.html",
+				"img/s1.png",
+				"img/mod.png",
+				"img/put.png",
+				"integral-change.html",
+				"img/s2.png",
+				"img/hand.png",
+				"personal/objection.html",
+				"personal/address.html",
+				"personal/bidding.html",
+				"img/success.png",
+				"font/SourceHanSansCN-Bold.otf",
+				"img/positive.png",
+				"img/give.png",
+				"img/fail.png",
+				"img/look.png",
+				"img/come.png",
+				"personal/saved_resource.html",
+				"personal/online-service.html",
+				"personal/personal-realname.html",
+				"login/register.html",
+				"img/offer.png",
+				"system.html",
+				"personal/nobattery-finish.html",
+				"personal/nobattery-details.html",
+				"personal/recharge.html",
+				"css/jquery.fullpage.min.css",
+				"personal/my-points.html",
+				"img/carem.png",
+				"personal/battery-detail.html",
+				"personal/company-credentials.html",
+				"packet-details.html",
+				"img/release.png",
+				"img/remove.png",
+				"personal/prove.html",
+				"login/forget-complete.html",
+				"img/point.png",
+				"img/01.jpg",
+				"index-air.html",
+				"personal/contact.html",
+				"end.html",
+				"personal/detail_main.html",
+				"personal/credentials.html",
+				"look.html",
+				"update.html",
+				"img/reset.png"
+			]
+		}
+	}
 }
